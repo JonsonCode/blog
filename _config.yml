@@ -100,5 +100,7 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: 'git'
+  name: MXDC
+  email: 1040558191@qq.com
   repo: git@github.com:MXDC/blog.git
   branch: gh-pages
