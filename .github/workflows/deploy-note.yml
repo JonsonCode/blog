@@ -1,0 +1,52 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Note Deploy
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches:
+     - hexo-note
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: A job to deploy blog.
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        repository: MXDC/blog
+        ref: hexo-note
+        submodules: true # Checkout private submodules(themes or something else).
+    # Caching dependencies to speed up workflows. (GitHub will remove any cache entries that have not been accessed in over 7 days.)
+    - name: Cache node modules
+      uses: actions/cache@v1.1.2
+      id: cache
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+    - name: Install Dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: | 
+        npm install
+        npm install hexo
+#     - name: Setup Deploy env
+#       env:
+#         DEPLOY_KEY: ${{ secrets.BLOG_DEPLOY }}
+#       run: |
+#         mkdir -p ~/.ssh
+#         echo "$DEPLOY_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+#         chmod 600 ~/.ssh/id_rsa
+#         ssh-keyscan github.com >> ~/.ssh/known_hosts
+      # Deploy hexo blog website.
+    - name: Deploy
+      id: deploy
+    #echo "${{ secrets.BLOG_DEPLOY }}"
+      run: |
+       npx hexo deploy
+    # Use the output from the `deploy` step(use for test action)
+    - name: Get the output
+      run: |
+        echo "${{ steps.deploy.outputs.notify }}"
