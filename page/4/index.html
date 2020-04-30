@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.2.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/logo.png">
   <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/blog/css/main.css">
@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"mxdc.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"mxdc.github.io","root":"/blog/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="Viva La Vida">
@@ -56,6 +56,23 @@
         }
     })();
 </script>
+<!--
+<script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/e8ccbfa1.js","daovoice")
+daovoice('init', {
+  app_id: "e8ccbfa1"
+});
+daovoice('update');
+</script>
+-->
+
+<!-- Aplay -->
+<!-- require APlayer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+
   <title>简素</title>
   
 
@@ -87,7 +104,7 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/blog/atom.xml" title="简素" type="application/atom+xml">
+<link rel="alternate" href="/blog/blog/atom.xml" title="简素" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -104,7 +121,7 @@
     </div>
   </div>
 
-  <div class="site-meta">
+  <div class="site-meta custom-logo">
 
     <a href="/blog/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
@@ -131,9 +148,14 @@
     <a href="/blog/" rel="section">首页</a>
 
   </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section">分类<span class="badge">20</span></a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/blog/archives/" rel="section">归档<span class="badge">49</span></a>
+    <a href="/blog/archives/" rel="section">归档<span class="badge">48</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -177,8 +199,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
-
-  <a href="https://github.com/MXDC" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 
     <main class="main">
@@ -192,10 +213,10 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/1970/01/01/vue/Vue-ssr/">
+    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/2020/04/29/algorithms/%E6%8E%92%E5%BA%8F/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="image" content="/blog/images/avatar.jpg">
       <meta itemprop="name" content="Jiyu Wu">
       <meta itemprop="description" content="Viva La Vida">
     </span>
@@ -206,7 +227,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/1970/01/01/vue/Vue-ssr/" class="post-title-link" itemprop="url">vue/Vue-ssr</a>
+            <a href="/blog/2020/04/29/algorithms/%E6%8E%92%E5%BA%8F/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">algorithms/排序/快速排序</a>
         </h2>
 
         <div class="post-meta">
@@ -216,1040 +237,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：1970-01-01 08:00:00" itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
+              <time title="创建时间：2020-04-29 02:27:14" itemprop="dateCreated datePublished" datetime="2020-04-29T02:27:14+08:00">2020-04-29</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-29 02:27:14" itemprop="dateModified" datetime="2020-04-29T02:27:14+08:00">2020-04-29</time>
+                <time title="修改时间：2020-04-30 18:28:25" itemprop="dateModified" datetime="2020-04-30T18:28:25+08:00">2020-04-30</time>
               </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.7k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="Client-side-render"><a href="#Client-side-render" class="headerlink" title="Client side render"></a>Client side render</h4><p>JavaScript 可以动态的生成页面内容，client side render指的就是前端拿到数据后，才用<code>JavaScript</code>动态把内容渲染到网页上。</p>
-<h4 id="Server-side-render"><a href="#Server-side-render" class="headerlink" title="Server side render"></a>Server side render</h4><p>如果页面由<code>Javascript</code>动态生成，网页只有经过浏览器加载并执行<code>Javascript</code>，等响应回来之后才能动态产生内容。这样对<code>SEO</code>支持不友好,只能搜索到空荡荡的<code>HTML</code>。不过<code>Google</code>的爬虫支持执行<code>Javascript</code>。<code>Server side render</code>像<code>MVC</code>中页面渲染一样，先渲染好页面，客户端就可以接收到网站的页面。</p>
-<h3 id="vue-webpack项目配置"><a href="#vue-webpack项目配置" class="headerlink" title="vue + webpack项目配置"></a>vue + webpack项目配置</h3><h4 id="vue-loager-webpack项目配置"><a href="#vue-loager-webpack项目配置" class="headerlink" title="vue-loager + webpack项目配置"></a>vue-loager + webpack项目配置</h4><ol>
-<li><p>创建一个<code>vue-ssr</code>目录作为项目目录</p>
-</li>
-<li><p>在<code>vue-ssr</code>目录下面使用<code>npm</code>初始化项目</p>
-<blockquote>
-<p>执行<code>npm init</code>初始化项目后，会在<code>vue-ssr</code>目录项目生成一个<code>package.json</code>文件</p>
-</blockquote>
-</li>
-<li><p>安装<code>webpack，vue，vue-loader,</code></p>
-<p>同样在<code>vue-ssr</code>目录下，执行<code>npm i webpack vue vue-loader</code>，运行完后会生成<code>node_modules</code>目录。</p>
-<blockquote>
-<p>npm WARN <a href="mailto:vue-loader@15.7.2">vue-loader@15.7.2</a> requires a peer of css-loader@* but none is installed. You must install peer dependencies yourself.</p>
-<p>执行<code>npm i css-loader  vue-template-compiler</code></p>
-</blockquote>
-</li>
-<li><p>在<code>vue-ssr</code>下面创建<code>src</code>目录用于存放源码</p>
-</li>
-<li><p>在<code>src</code>目录下面创建<code>app.vue</code>文件，内容如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">      &#123;&#123;text&#125;&#125;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            text:&quot;hello&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">   </span><br><span class="line">&lt;style&gt;</span><br><span class="line">#app&#123;</span><br><span class="line">    color: rgb(255, 0, 0);</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<ol start="6">
-<li><p>在<code>src</code>目录下面创建<code>webpack.config.js</code>,配置文件如下:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>)</span><br><span class="line"><span class="number">1.</span> </span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line"><span class="comment">//2. 入口文件   </span></span><br><span class="line"> entry:path.join(__dirname,<span class="string">"src/index.js"</span>),</span><br><span class="line"><span class="comment">//2. 出口文件</span></span><br><span class="line"> output:&#123;</span><br><span class="line">     <span class="comment">// 文件名</span></span><br><span class="line">     filename:<span class="string">"bundle.js"</span>,</span><br><span class="line">     <span class="comment">// 文件路径   </span></span><br><span class="line">     path : path.join(__dirname,<span class="string">"dist"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="7">
-<li><p>创建<code>index.js</code>内容如下:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">"vue"</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">"./app.vue"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>)</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(root)</span><br><span class="line"><span class="comment">// 将模板挂载到html 元素中</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    render:<span class="function">(<span class="params">h</span>)=&gt;</span>h(App)</span><br><span class="line">&#125;).$mount(root)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在<code>package.json</code>文件中的<code>scripts</code>中添加webpack打包命令</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">   "test": "echo \"Error: no test specified\" &amp;&amp; exit 1",</span><br><span class="line">   "build":"webpack --config webpack.config.js"</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>webpack.config.js</code>,配置文件如下:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>)</span><br><span class="line"><span class="keyword">const</span> VueLoaderPlugin = <span class="built_in">require</span>(<span class="string">'vue-loader/lib/plugin'</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry:path.join(__dirname,<span class="string">"src/index.js"</span>),</span><br><span class="line">    output:&#123;</span><br><span class="line">        filename:<span class="string">"bundle.js"</span>,</span><br><span class="line">        path : path.join(__dirname,<span class="string">"dist"</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">module</span>:&#123;</span><br><span class="line">        rules:[</span><br><span class="line">          &#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,<span class="attr">use</span>:[<span class="string">'style-loader'</span>,<span class="string">'vue-loader'</span>]&#125;,</span><br><span class="line">          &#123;<span class="attr">test</span>:<span class="regexp">/\.vue$/</span>,<span class="attr">use</span>:[<span class="string">'vue-loader'</span>]&#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">    plugins:[</span><br><span class="line">        <span class="keyword">new</span> VueLoaderPlugin()</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置webpack-dev-server</p>
-<ul>
-<li><p>安装webpack-dev-server <code>npm i webpack-dev-server</code></p>
-</li>
-<li><p>在<code>package.jons</code>中的<code>scripts</code>中添加<code>webpack-dev-server</code>命令</p>
-</li>
-<li><p>在<code>webpack.config.js</code>中配置<code>target</code></p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">target:&quot;web&quot;,</span><br></pre></td></tr></table></figure>
-
-<p>编译为类浏览器环境里可用<strong>（默认）</strong></p>
-</blockquote>
-</li>
-<li><p>添加<code>cross-env</code>实现夸平台设置变量</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">    "test": "echo \"Error: no test specified\" &amp;&amp; exit 1",</span><br><span class="line">    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",</span><br><span class="line">    "dev": "cross-evn NODE_ENV=dev webpack-dev-server --config webpack.config.js"</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
-
-<p>这样可以在webpack.config.js接收到NODE_ENV 变量：<code>process.env.NODE_ENV</code></p>
-</li>
-<li><p>修改<code>webpack.config.js</code>如下:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>)</span><br><span class="line"><span class="keyword">const</span> VueLoaderPlugin = <span class="built_in">require</span>(<span class="string">'vue-loader/lib/plugin'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> isDev = process.env.NODE_ENV === <span class="string">'development'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">    target:<span class="string">"web"</span>,</span><br><span class="line">    entry:path.join(__dirname,<span class="string">"src/index.js"</span>),</span><br><span class="line">    output:&#123;</span><br><span class="line">        filename:<span class="string">"bundle.js"</span>,</span><br><span class="line">        path : path.join(__dirname,<span class="string">"dist"</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">module</span>:&#123;</span><br><span class="line">        rules:[</span><br><span class="line">          &#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,<span class="attr">loader</span>:<span class="string">"css-loader"</span>&#125;,</span><br><span class="line">          &#123;<span class="attr">test</span>:<span class="regexp">/\.vue$/</span>,<span class="attr">use</span>:[<span class="string">'vue-loader'</span>]&#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">    plugins:[</span><br><span class="line">        <span class="keyword">new</span> VueLoaderPlugin()</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 如果是开发环境会添加devServer属性</span></span><br><span class="line"><span class="keyword">if</span>(isDev)&#123;</span><br><span class="line">    config.devtool:<span class="string">""</span></span><br><span class="line">    config.devServer = &#123;</span><br><span class="line">        port:<span class="string">'80'</span>,</span><br><span class="line">        host:<span class="string">'0.0.0.0'</span>,</span><br><span class="line">        <span class="comment">// 热部署</span></span><br><span class="line">        hot:<span class="literal">true</span>,</span><br><span class="line">        overlay:&#123;</span><br><span class="line">            <span class="comment">// 将编译过程中的错误显示到网页</span></span><br><span class="line">            errors:<span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>使用<code>html-webpack-plugin</code>挂载<code>js</code></p>
-<p>没有<code>html</code>入口文件是访问不了的,<code>htmlwebpack-plugin</code>会将编译好的bundle.js挂载到<code>index.hmtl</code>(没有就创建)中</p>
-<ul>
-<li><p>安装<code>npm i html-webpack-plugin</code></p>
-</li>
-<li><p>在<code>webpack.config.js</code>引用</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> HTMLPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>)</span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>)</span><br><span class="line">......</span><br><span class="line"></span><br><span class="line">    plugins:[</span><br><span class="line">        <span class="keyword">new</span> VueLoaderPlugin(),</span><br><span class="line">        <span class="keyword">new</span> HTMLPlugin(),</span><br><span class="line">        <span class="comment">// 定义全局变量</span></span><br><span class="line">        <span class="keyword">new</span> webpack.DefinePlugin(&#123;</span><br><span class="line">            <span class="string">'process.env'</span>:&#123;</span><br><span class="line">                NODE_ENV: isDev ? <span class="string">'"development"'</span> :<span class="string">'"production"'</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/1970/01/01/vue/Vuex/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="Jiyu Wu">
-      <meta itemprop="description" content="Viva La Vida">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="简素">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/1970/01/01/vue/Vuex/" class="post-title-link" itemprop="url">vue/Vuex</a>
-        </h2>
-
-        <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
+                <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：1970-01-01 08:00:00" itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/algorithms/" itemprop="url" rel="index"><span itemprop="name">algorithms</span></a>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-29 02:27:14" itemprop="dateModified" datetime="2020-04-29T02:27:14+08:00">2020-04-29</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>350</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">"vue"</span>;</span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">"vuex"</span>;</span><br><span class="line"></span><br><span class="line">Vue.use(Vuex);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state: &#123;&#125;,</span><br><span class="line">   mutations: &#123;</span><br><span class="line">    listMemos(state, total) &#123;</span><br><span class="line">      state.memos.total = total;</span><br><span class="line">      <span class="built_in">console</span>.log(total);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  actions: &#123;&#125;,</span><br><span class="line">  modules: &#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><code>mutations</code>用于修改并跟踪数据的变化，通过<code>store.commit(&#39;mutations&#39;,params)</code>调用</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/1970/01/01/vue/Vue%E6%A0%B8%E5%BF%83%E5%B1%9E%E6%80%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="Jiyu Wu">
-      <meta itemprop="description" content="Viva La Vida">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="简素">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/1970/01/01/vue/Vue%E6%A0%B8%E5%BF%83%E5%B1%9E%E6%80%A7/" class="post-title-link" itemprop="url">vue/Vue核心属性</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：1970-01-01 08:00:00" itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/algorithms/%E6%8E%92%E5%BA%8F/" itemprop="url" rel="index"><span itemprop="name">排序</span></a>
                 </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-29 02:27:14" itemprop="dateModified" datetime="2020-04-29T02:27:14+08:00">2020-04-29</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.7k</span>
             </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="组件的组成——属性"><a href="#组件的组成——属性" class="headerlink" title="组件的组成——属性"></a>组件的组成——属性</h4><p>子组件默认无法访问到父组件上的数据和方法。</p>
-<p>有两种方法传递，分别为静态和动态<code>pros</code></p>
-<ul>
-<li><p>静态：<component-name propsname="hello world"></component-name></p>
-</li>
-<li><p>动态：在使用(复用)子组件时，通过<code>v-bind:pmsg</code>=”msg”，向子组件props中定义的<code>pmsg</code>传递父组件<code>data</code>中的<code>msg</code>数据。</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[属性]</span><br><span class="line">A1[自定义属性props]--&gt;A11[props中声明的属性]</span><br><span class="line">A2[原生属性attrs]--&gt;A21[默认自动挂载到组件根元素上,inheritAttrs为false关闭挂载]</span><br><span class="line">A3[特殊属性class,style]</span><br><span class="line">A--&gt;A1 </span><br><span class="line">A--&gt;A2</span><br><span class="line">A--&gt;A3</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 通过v-bind绑定自定义属性pmsg到msg --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 自定义属性pmgs在props数组中定义才可以在子组件中使用 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">com1</span> <span class="attr">v-bind:pmsg</span>=<span class="string">"msg"</span>&gt;</span><span class="tag">&lt;/<span class="name">com1</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> v =<span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">'#app'</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            msg:<span class="string">"hello world"</span></span></span><br><span class="line">        &#125;,</span><br><span class="line">       components:&#123;</span><br><span class="line">            </span><br><span class="line">           com1:&#123;</span><br><span class="line"><span class="handlebars"><span class="xml">               template:'<span class="tag">&lt;<span class="name">h1</span>&gt;</span>jjjj</span><span class="template-variable">&#123;&#123;pmsg&#125;&#125;</span><span class="xml">---</span><span class="template-variable">&#123;&#123;cmsg&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span>',</span></span></span><br><span class="line"><span class="actionscript">            <span class="comment">//    需要定义才能使用，只读</span></span></span><br><span class="line"><span class="actionscript">               props:[<span class="string">'pmsg'</span>],</span></span><br><span class="line">               data() &#123;</span><br><span class="line"><span class="actionscript">               <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">                   cmsg:<span class="string">"aaaaa"</span></span></span><br><span class="line">               &#125;</span><br><span class="line">           &#125;,</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>组件中props中定义的属性的数据都是父组件传递过来的，传递过来的数据是只读单向的，自己修改会报错，可以通过调用父组件传递过的函数修改</p>
-</blockquote>
-<h4 id="组件的组成——事件"><a href="#组件的组成——事件" class="headerlink" title="组件的组成——事件"></a>组件的组成——事件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[事件]--&gt;A1[普通事件包括自定义事件]</span><br><span class="line">A1--&gt;A11[通过this.$emit触发]</span><br><span class="line">A--&gt;A2[修饰符事件]</span><br></pre></td></tr></table></figure>
-
-<p>普通事件通过<code>@chang</code>、<code>@input</code>、<code>@click</code>、<code>@customEvnet</code>绑定事件，通过<code>this.$emit(&#39;EventName&#39;,param...)</code>触发，其中@input是<code>v-on:input</code>的缩写</p>
-<h4 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h4><blockquote>
-<p>在 2.6.0 中，我们为具名插槽和作用域插槽引入了一个新的统一的语法 (即 <code>v-slot</code> 指令)。它取代了 <code>slot</code> 和 <code>slot-scope</code> 这两个目前已被废弃但未被移除且仍在<a href="https://cn.vuejs.org/v2/guide/components-slots.html#废弃了的语法" target="_blank" rel="noopener">文档中</a>的特性。新语法的由来可查阅这份 <a href="https://github.com/vuejs/rfcs/blob/master/active-rfcs/0001-new-slot-syntax.md" target="_blank" rel="noopener">RFC</a></p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">slot:slotName</span>&gt;</span><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">slot:slotName</span>=<span class="string">"pros"</span>&gt;</span><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>slotName为插槽的名称，在对应的模板组件中用以下标签来接收</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"title"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"item"</span> <span class="attr">v-bind</span>=<span class="string">"&#123; value: 'vue' &#125;"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="状态-data-Vs-属性-props"><a href="#状态-data-Vs-属性-props" class="headerlink" title="状态 data Vs 属性 props"></a>状态 data Vs 属性 props</h4><ul>
-<li>状态是组件自身的数据</li>
-<li>属性是来自父组件的数据</li>
-<li>状态的改变未必会触发 更新</li>
-<li>属性的改变未必会触发 更新</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">    <span class="comment">// this.name没有做响应式</span></span><br><span class="line">   <span class="keyword">this</span>.name = name;</span><br><span class="line">   <span class="keyword">return</span> &#123;</span><br><span class="line">     <span class="comment">// 只在info上做响应式，下面的字段没有做响应式设置</span></span><br><span class="line">     info: &#123;&#125;,</span><br><span class="line">     <span class="comment">// 可以提前声明字段，会做响应式设置</span></span><br><span class="line">     <span class="comment">// info: &#123;</span></span><br><span class="line">     <span class="comment">//   number: undefined</span></span><br><span class="line">     <span class="comment">// &#125;,</span></span><br><span class="line">     list: []</span><br><span class="line">   &#125;;</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="计算属性-computed"><a href="#计算属性-computed" class="headerlink" title="计算属性 computed"></a>计算属性 computed</h4><p>依赖于固定的数据类型——响应式数据，普通全局属性改变是computed是不会重新计算的</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/1970/01/01/vue/vue/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="Jiyu Wu">
-      <meta itemprop="description" content="Viva La Vida">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="简素">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/1970/01/01/vue/vue/" class="post-title-link" itemprop="url">vue/vue</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：1970-01-01 08:00:00" itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-29 02:35:04" itemprop="dateModified" datetime="2020-04-29T02:35:04+08:00">2020-04-29</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>11k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>10 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 直接在脚本中引用</span></span><br><span class="line">&lt;script src=<span class="string">"./node_modules/vue/dist/vue.min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="Vue实例"><a href="#Vue实例" class="headerlink" title="Vue实例"></a>Vue实例</h4><p>每个 Vue 应用都是通过用 <code>Vue</code> 函数创建一个新的 <strong>Vue 实例</strong>开始的：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="string">'#id'</span>,<span class="comment">// 视图模板的Id</span></span><br><span class="line">    data:&#123;<span class="comment">// 数据对象</span></span><br><span class="line">  		msg:<span class="string">"hello world"</span>      </span><br><span class="line">    &#125;，</span><br><span class="line">    methods:&#123;</span><br><span class="line">      show:<span class="function"><span class="keyword">function</span>(<span class="params">msg</span>)</span>&#123;</span><br><span class="line">                alert(msg+<span class="keyword">this</span>.btnMsg)</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>Vue实例相当一个ViewAndModle。vm属性访问加<code>$</code>符号：<code>vm.$el</code>,<code>vm.$data</code>,数据访问直接vm.msg</p>
-</blockquote>
-<h4 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h4><h5 id="v-text-和-v-html"><a href="#v-text-和-v-html" class="headerlink" title="v-text 和 v-html"></a>v-text 和 v-html</h5><ul>
-<li><p><code></code> : 绑定数据,只会替换自己的占位符，会转义输出 </p>
-</li>
-<li><p><code>v-text = “msg”</code>: 绑定数据,会覆盖标签里面的内容，,会输出标签</p>
-</li>
-<li><p><code>v-html = &quot;msg&quot;</code>：会解析html标签</p>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-attr">[v-cloak]</span>&#123;</span></span><br><span class="line">        display: none;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span> <span class="attr">v-cloak</span>&gt;</span></span><br><span class="line">     &#123;&#123;msg&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h4</span> <span class="attr">v-text</span>=<span class="string">"msg"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h5><p>v-bind是vue中用于绑定<code>属性</code>的指令，单向绑定</p>
-<p><code>v-bind:attribute=&#39;expr&#39;</code>可以简写为<code>:attribute=&#39;expr&#39;</code></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- v-bind 会把mytitle当成表达式 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span> <span class="attr">v-bind:title</span>=<span class="string">'mytitle+"hello word" '</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">'#app'</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            mytitle:<span class="string">'this is a title'</span></span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="v-on和事件修饰符"><a href="#v-on和事件修饰符" class="headerlink" title="v-on和事件修饰符"></a>v-on和事件修饰符</h5><p>v-on是vue中用来绑定事件的指令</p>
-<p><code>v-on:event=&#39;method(param)&#39;</code>可以简写为<code>@evnet=&#39;method(param)&#39;</code></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"btn"</span> <span class="attr">:value</span>=<span class="string">'btnMsg'</span> <span class="attr">v-on:click</span>=<span class="string">'show("hello word")'</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">	<span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">'btn'</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            btnMsg:<span class="string">'button'</span></span></span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line"><span class="actionscript">            show:<span class="function"><span class="keyword">function</span><span class="params">(msg)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">                alert(msg+<span class="keyword">this</span>.btnMsg)</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>vue事件修饰符：</p>
-<ul>
-<li>event.stop 停止向上冒泡</li>
-<li>event.prevent 阻值默认行为</li>
-<li>event.catpure 实现捕获触发事件的机制(相对于冒泡触发)</li>
-<li>event.self 只有点击单前元素才会触发事件,不会阻止冒泡行为</li>
-<li>event.once 只触发一次函数</li>
-</ul>
-<blockquote>
-<p>事件修饰符可以串联,eg.evnet.self.once</p>
-</blockquote>
-<h5 id="跑马灯实例"><a href="#跑马灯实例" class="headerlink" title="跑马灯实例"></a>跑马灯实例</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">:value</span>=<span class="string">"start"</span> @<span class="attr">click</span>=<span class="string">'s'</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">:value</span>=<span class="string">"stop"</span> @<span class="attr">click</span>=<span class="string">'sp'</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">h4</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./node_modules/vue/dist/vue.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">'#app'</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            start:<span class="string">'开始'</span>,</span></span><br><span class="line"><span class="actionscript">            stop:<span class="string">'结束'</span>,</span></span><br><span class="line"><span class="actionscript">            msg:<span class="string">'浪哩个啦浪哩个啦'</span>,</span></span><br><span class="line"><span class="actionscript">            intervalId:<span class="literal">null</span></span></span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            s()&#123;</span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.intervalId=setInterval(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span></span><br><span class="line"><span class="actionscript">                    <span class="keyword">this</span>.msg = <span class="keyword">this</span>.msg.substring(<span class="number">1</span>)+<span class="keyword">this</span>.msg.substring(<span class="number">0</span>,<span class="number">1</span>)</span></span><br><span class="line"><span class="javascript">                <span class="built_in">console</span>.log(<span class="keyword">this</span>.msg)</span></span><br><span class="line">                &#125;,500)</span><br><span class="line">                </span><br><span class="line">            &#125;,</span><br><span class="line">            sp()&#123;</span><br><span class="line"><span class="actionscript">                clearInterval(<span class="keyword">this</span>.intervalId)</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="v-model双向数据绑定"><a href="#v-model双向数据绑定" class="headerlink" title="v-model双向数据绑定"></a>v-model双向数据绑定</h5><p>v-model 只能用于表单元素中</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model:value</span> = <span class="string">"msg"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model</span> = <span class="string">"msg"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="v-for指令"><a href="#v-for指令" class="headerlink" title="v-for指令"></a>v-for指令</h5><ol>
-<li><code>&lt;h v-for=&quot;item in list&quot;&gt;&lt;/h&gt;</code></li>
-<li>使用索引，第二个参数为索引<code>&lt;h v-for=&quot;(item,i) in list&quot;&gt;--&lt;/h&gt;</code></li>
-<li>遍历对象(值，键，索引)，<code>v-for=&quot;(val,key,index) in user&quot;</code></li>
-<li>遍历数值 ，<code>v-for =&quot;i in 10&quot;</code> 从1开始</li>
-</ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h</span> <span class="attr">v-for</span>=<span class="string">"item in list"</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">h</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">   <span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">       el:<span class="string">'#app'</span>,</span></span><br><span class="line">       data:&#123;</span><br><span class="line">        list:[1,2,4,5,6]</span><br><span class="line">       &#125;,</span><br><span class="line">   &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>使用：key=””,使选项唯一，保持对应关系，key为string/int</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-timeline-item</span></span></span><br><span class="line"><span class="tag">              <span class="attr">v-for</span>=<span class="string">"item in this.$store.getters.records"</span></span></span><br><span class="line"><span class="tag">              <span class="attr">class</span>=<span class="string">"list-item"</span></span></span><br><span class="line"><span class="tag">              <span class="attr">:key</span>=<span class="string">"item.id"</span></span></span><br><span class="line"><span class="tag">              <span class="attr">:timestamp</span>=<span class="string">"item.modifiedTime"</span></span></span><br><span class="line"><span class="tag">              <span class="attr">placement</span>=<span class="string">"top"</span></span></span><br><span class="line"><span class="tag">            &gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="v-if和v-show"><a href="#v-if和v-show" class="headerlink" title="v-if和v-show"></a>v-if和v-show</h5><p>v-if每次都删除创建元素，v-show没有切换display</p>
-<h4 id="在vue中使用样式-class四种"><a href="#在vue中使用样式-class四种" class="headerlink" title="在vue中使用样式-class四种"></a>在vue中使用样式-class四种</h4><ul>
-<li>用v-bind绑定时，直接传递一个数组，<code>&lt;div id=&quot;app&quot; :class=&quot;[&#39;italic&#39;,&#39;red&#39;,&#39;thin&#39;]&quot;&gt;</code></li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.red</span>&#123;</span></span><br><span class="line">        color: red</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.italic</span>&#123;</span></span><br><span class="line">        font-style: italic</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.thin</span>&#123;</span></span><br><span class="line">        font-size: 200pt;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span> <span class="attr">:class</span>=<span class="string">"['italic','red','thin']"</span>&gt;</span></span><br><span class="line">     &#123;&#123;msg&#125;&#125;</span><br><span class="line">     <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model:value</span> = <span class="string">"msg"</span>/&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>在数组中使用三元表达式 <code>&lt;div id=&quot;app&quot; :class=&quot;[&#39;italic,flag?&#39;thin&#39;:&#39;red&#39;]&quot;&gt;</code></li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> `<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span> <span class="attr">:class</span>=<span class="string">"['italic,flag?'thin':'red']"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">   <span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">       el:<span class="string">'#app'</span>,</span></span><br><span class="line">       data:&#123;</span><br><span class="line"><span class="actionscript">           msg:<span class="string">"hhahahah"</span>,</span></span><br><span class="line"><span class="actionscript">           flag:<span class="literal">false</span></span></span><br><span class="line">       &#125;,</span><br><span class="line"><span class="actionscript">       methods:<span class="literal">null</span></span></span><br><span class="line">   &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>在数组中使用对象代替三元值<code>&lt;div id=&quot;app&quot; :class=&quot;[&#39;italic,{&#39;red&#39;:falg}]&quot;&gt;</code> </p>
-</li>
-<li><p>直接使用对象<code>&lt;div id=&quot;app&quot; :class=&quot;{red:true,italic:true,thin:true}&quot;&gt;</code></p>
-<p>或<code>&lt;div id=&quot;app&quot; :class=&quot;classObject&quot;&gt;</code></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">   <span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">       el:<span class="string">'#app'</span>,</span></span><br><span class="line">       data:&#123;</span><br><span class="line"><span class="actionscript">           msg:<span class="string">"hhahahah"</span>,</span></span><br><span class="line"><span class="actionscript">           flag:<span class="literal">true</span>,</span></span><br><span class="line">           classObject:&#123;</span><br><span class="line"><span class="actionscript">               red:<span class="literal">true</span>,</span></span><br><span class="line"><span class="actionscript">               italic:<span class="literal">true</span>,</span></span><br><span class="line"><span class="actionscript">               thin:<span class="literal">true</span></span></span><br><span class="line">           &#125;</span><br><span class="line">       &#125;,</span><br><span class="line"><span class="actionscript">       methods:<span class="literal">null</span></span></span><br><span class="line">   &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-<p>在vue中使用内联样式-style四种</p>
-<ul>
-<li><p>直接在元素上使用:style=”object”</p>
-<p><code>&lt;div id=&quot;app&quot; :style=&quot;{color:&#39;red&#39;,&#39;font-style&#39;:&#39;italic&#39;}&quot;&gt;</code></p>
-</li>
-<li><p>使用数组引用多个对象 <code>&lt;div id=&quot;app&quot; :style=&quot;[classObject1,classObject2]&quot;&gt;</code></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span> <span class="attr">:style</span>=<span class="string">"[classObject1,classObject2]"</span>&gt;</span> </span><br><span class="line">var vue = new Vue(&#123;</span><br><span class="line">       el:'#app',</span><br><span class="line">       data:&#123;</span><br><span class="line">           msg:"hhahahah",</span><br><span class="line">           flag:true,</span><br><span class="line">           classObject1:&#123;</span><br><span class="line">               color:'red'</span><br><span class="line">           &#125;,</span><br><span class="line">           classObject2:&#123;</span><br><span class="line">               'font-style':'italic'</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;,</span><br><span class="line">   &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- in mustaches --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- in v-bind --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:id</span>=<span class="string">"rawId | formatId"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>定义全局过滤器</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Vue.filter(<span class="string">'capitalize'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!value) <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line">  value = value.toString()</span><br><span class="line">  <span class="keyword">return</span> value.charAt(<span class="number">0</span>).toUpperCase() + value.slice(<span class="number">1</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-<p>过滤器可以接收多个参数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; message | capitalize(<span class="string">'arg1'</span>,<span class="string">'arg2'</span>) &#125;&#125;</span><br><span class="line"></span><br><span class="line">Vue.filter(<span class="string">'capitalize'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">value,arg1,agr2</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!value) <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line">  value = value.toString()</span><br><span class="line">  <span class="keyword">return</span> value.charAt(<span class="number">0</span>).toUpperCase() + value.slice(<span class="number">1</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="vue-resource"><a href="#vue-resource" class="headerlink" title="vue-resource"></a>vue-resource</h4><p>vue-resource依赖vue,实现<code>get</code>,<code>post</code> ,<code>jsonp</code>请求</p>
-<p>安装<code>cnpm i vue-resource</code></p>
-<h4 id="vue组件"><a href="#vue组件" class="headerlink" title="vue组件"></a>vue组件</h4><p>组件是ui界面角度,模块是代码角度，将某个功能模块定义成组件，要那部分功能就使用那部分组件。<strong>组件是可复用的 Vue 实例</strong>。通过<code>&lt;组件名&gt;&lt;/组件名&gt;</code>使用组件。</p>
-<p><img src="https://cn.vuejs.org/images/components.png" alt="组件树"></p>
-<blockquote>
-<p><code>new Vue(options)</code>就是个根节点，<code>options</code>就是组件</p>
-</blockquote>
-<p>生命周期：</p>
-<p><img src="https://cn.vuejs.org/images/lifecycle.png" alt=""></p>
-<h5 id="全局组件"><a href="#全局组件" class="headerlink" title="全局组件"></a>全局组件</h5><hr>
-<h5 id="创建方式1-Vue-extend"><a href="#创建方式1-Vue-extend" class="headerlink" title="创建方式1-Vue.extend()"></a>创建方式1-Vue.extend()</h5><p>使用Vue.extend创建全局的组件对象，<code>Vue.component()</code>注册全局组件，在全局可用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.1定义使用Vue.extend定义一个组件</span></span><br><span class="line"><span class="keyword">var</span> comp = Vue.extend(&#123;</span><br><span class="line">   		<span class="comment">// 组件中包含模板元素,template</span></span><br><span class="line">      template:<span class="string">'&lt;h1&gt;hello world&lt;/h1&gt;'</span></span><br><span class="line">  &#125;)</span><br><span class="line"><span class="comment">// 1.2注册组件</span></span><br><span class="line">    Vue.component(<span class="string">'myComp'</span>,comp);</span><br><span class="line">    <span class="keyword">var</span> v =<span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el:<span class="string">'#app'</span><span class="comment">// 只有实例化vue对象控制的元素才能引用组件</span></span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>只有实例化vue对象后才能引用组件，在使用Vue.component定义组件时，组件名使用驼峰命名，引用组件时要用<code>-</code>连接</p>
-</blockquote>
-<h5 id="创建方式2"><a href="#创建方式2" class="headerlink" title="创建方式2"></a>创建方式2</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    Vue.component(<span class="string">'myComp'</span>,&#123;</span><br><span class="line">        template:<span class="string">'&lt;h1&gt;hello word&lt;/h2&gt;'</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">var</span> v =<span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el:<span class="string">'#app'</span></span><br><span class="line">    &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>组件模板<code>template</code>只能包含一个根元素</p>
-</blockquote>
-<h5 id="创建方式3"><a href="#创建方式3" class="headerlink" title="创建方式3"></a>创建方式3</h5><p>在被控制的元素的外部使用<code>template</code>元素定义模板，通过id引用模板</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">my-comp</span>&gt;</span><span class="tag">&lt;/<span class="name">my-comp</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">"templ"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            hahhahaha</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./node_modules/vue/dist/vue.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    Vue.component(<span class="string">'myComp'</span>,&#123;</span></span><br><span class="line"><span class="actionscript">        template:<span class="string">'#templ'</span></span></span><br><span class="line">    &#125;);</span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> v =<span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">'#app'</span></span></span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="局部组件"><a href="#局部组件" class="headerlink" title="局部组件"></a>局部组件</h5><hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="string">''</span>,</span><br><span class="line">    data:&#123;&#125;,</span><br><span class="line">    componens:&#123;<span class="comment">//定义实例内部组件用componets属性</span></span><br><span class="line">        login:&#123;<span class="comment">//组件名</span></span><br><span class="line">            template:<span class="string">''</span>,</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="组件对象的属性"><a href="#组件对象的属性" class="headerlink" title="组件对象的属性"></a>组件对象的属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	template:<span class="string">''</span>,<span class="comment">//组件中的模板</span></span><br><span class="line">	data:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> &#123;&#125; &#125;,<span class="comment">//组件有自己的data,但必须一个函数，并返回数据对象，这样保证使用组件中的data对象都不一样</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="组件中的data"><a href="#组件中的data" class="headerlink" title="组件中的data"></a>组件中的data</h5><blockquote>
-<p>组件中的data必须定义为function,方法必须返回一个对象</p>
-</blockquote>
-<h5 id="组件切换"><a href="#组件切换" class="headerlink" title="组件切换"></a>组件切换</h5><ol>
-<li>v-if 和v-else切换</li>
-<li><code>&lt;component :is=&quot;expr&quot;&gt;&lt;/component&gt;</code></li>
-</ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- vue 提供component组件 用来展示对应的模板组件 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- component为占位符 :is 属性用来指定要展示的组件名 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"'comp1'"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    Vue.component(<span class="string">'comp1'</span>,&#123;</span></span><br><span class="line"><span class="handlebars"><span class="xml">        template:'<span class="tag">&lt;<span class="name">h1</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>',</span></span></span><br><span class="line">        </span><br><span class="line">    &#125;);</span><br><span class="line"><span class="actionscript">    Vue.component(<span class="string">'comp2'</span>,&#123;</span></span><br><span class="line"><span class="handlebars"><span class="xml">        template:'<span class="tag">&lt;<span class="name">h1</span>&gt;</span>注册<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>',</span></span></span><br><span class="line">        </span><br><span class="line">    &#125;);</span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> v =<span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">'#app'</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line">            list:[]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="父组件向子组件传值"><a href="#父组件向子组件传值" class="headerlink" title="父组件向子组件传值"></a>父组件向子组件传值</h5><p>父组件在引用子组件的时候通过属性绑定的方式(v-bind)传值</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 通过v-bind绑定自定义属性pmsg到msg --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 自定义属性pmgs在props数组中定义才可以在子组件中使用 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">com1</span> <span class="attr">v-bind:pmsg</span>=<span class="string">"msg"</span>&gt;</span><span class="tag">&lt;/<span class="name">com1</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> v =<span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">'#app'</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            msg:<span class="string">"hello world"</span></span></span><br><span class="line">        &#125;,</span><br><span class="line">       components:&#123;</span><br><span class="line">            </span><br><span class="line">           com1:&#123;</span><br><span class="line"><span class="handlebars"><span class="xml">               template:'<span class="tag">&lt;<span class="name">h1</span>&gt;</span>jjjj</span><span class="template-variable">&#123;&#123;pmsg&#125;&#125;</span><span class="xml">---</span><span class="template-variable">&#123;&#123;cmsg&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span>',</span></span></span><br><span class="line"><span class="actionscript">            <span class="comment">//    需要定义才能使用，只读</span></span></span><br><span class="line"><span class="actionscript">               props:[<span class="string">'pmsg'</span>],</span></span><br><span class="line">               data() &#123;</span><br><span class="line"><span class="actionscript">               <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">                   cmsg:<span class="string">"aaaaa"</span></span></span><br><span class="line">               &#125;</span><br><span class="line">           &#125;,</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>父组件向子组件传递方法</p>
-<p>使用事件绑定机制 v-on:func = “parent_function”</p>
-<p>子组件 通过this.$emit(‘func’，arg,..)调用父组件的函数</p>
-<p>可以通过arg变相传参给子组件</p>
-<h4 id="vue-router"><a href="#vue-router" class="headerlink" title="vue-router"></a>vue-router</h4><p>前端单页面通过hash(#)来切换页面的方式</p>
-<h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a><a href="https://router.vuejs.org/zh/installation.html" target="_blank" rel="noopener">安装</a></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-router</span><br></pre></td></tr></table></figure>
-
-<p><em>如果在一个模块化工程中使用它，必须要通过 Vue.use() 明确地安装路由功能：</em></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span> </span><br><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">'vue-router'</span>  </span><br><span class="line">Vue.use(VueRouter)</span><br></pre></td></tr></table></figure>
-
-<p>使用和创建路由(使用script全局引用则不需Vue.use())</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Vue.use(VueRouter)</span><br><span class="line"><span class="keyword">var</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">    routes:[<span class="comment">//路由匹配规则</span></span><br><span class="line">        &#123;<span class="attr">path</span>:<span class="string">'/'</span>,<span class="attr">redirect</span>:<span class="string">'/login'</span>&#125;,<span class="comment">//重定向</span></span><br><span class="line">        &#123;<span class="attr">path</span>:<span class="string">'/login'</span>,<span class="attr">component</span>:login&#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>component的属性值必须是一个组件模板对象，不能是组件的引用名称,重定向使用<code>redirect</code> </p>
-</blockquote>
-<h5 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h5><p>创建完路由规则对象后，<code>要注册到vm实例对象</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="string">'#app'</span>,</span><br><span class="line">    data:&#123;&#125;,</span><br><span class="line">    router:router</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>注册完路由后，要在对应的元素上放在容器<code>&lt;router-view&gt;&lt;/router-view&gt;</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">  &lt;!-- 路由出口 --&gt;</span><br><span class="line">  &lt;!-- 路由匹配到的组件将渲染在这里 --&gt;</span><br><span class="line">  &lt;!-- router-view提供的特殊占位符 --&gt;</span><br><span class="line">  &lt;router-view&gt;&lt;&#x2F;router-view&gt;</span><br><span class="line"> &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 使用 router-link 组件来导航. --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 通过传入 `to` 属性指定链接. --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- &lt;router-link&gt; 默认会被渲染成一个 `&lt;a&gt;` 标签 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/foo"</span> <span class="attr">tar</span>=<span class="string">"span"</span>&gt;</span>Go to Foo<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/bar"</span>&gt;</span>Go to Bar<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h5 id="路由传参"><a href="#路由传参" class="headerlink" title="路由传参"></a>路由传参</h5><p>1.</p>
-<h4 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h4><p>问题1：资源多，要发起多次请求</p>
-<p>问题2：</p>
-<blockquote>
-<p>webpack能转化一些低级的es6语法，可以使用bable转化更高级的语法</p>
-</blockquote>
-<h4 id="webpack-dev-server"><a href="#webpack-dev-server" class="headerlink" title="webpack-dev-server"></a>webpack-dev-server</h4><p>webpack-dev-server生成的bundle.js文件在服务器跟目录，且在内存里，没有生成本地文件<br>常用命令:</p>
-<p>webpack-dev-server –open –port 3000  : 启动后自动打开,和设置端口</p>
-<p>​                                      –contentBase path :服务器的根路径</p>
-<p>​                                      –hot :局部热更新</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">    "dev": "webpack-dev-server --open --port 3000 --contentBase src --hot"</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="html-webpack-plugin"><a href="#html-webpack-plugin" class="headerlink" title="html-webpack-plugin"></a>html-webpack-plugin</h4><h4 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h4><p>webpack默认打包js文件，无法打包非js文件，如果要打包其他文件需要安装第三loader加载器，</p>
-<p>如果要打包css要安装<code>style-loader</code>和<code>css-loader</code>，然后在webpack.config.js中新增module节点，module对象上有个rules数组，存放了第三方文件的匹配和处理规则</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>:&#123;</span><br><span class="line">  rules:[</span><br><span class="line">    &#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,<span class="attr">use</span>:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>]&#125;<span class="comment">//从后往前调用loader</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>图片路径使用url-loader,url-loader内部依赖file-loader <code>{test:/\.(jpg|png|jpeg|gif|bmp)/,use:&#39;url-loader?limit=7834&amp;name=[name].[ext]&#39;}</code>如果引用的图片大于<code>limit</code>不会转化为base64(但会重新命名)，如果小于limit会转化为base64；<code>name=[name].[ext]</code>图片名称使用原理的名称。</p>
-<h4 id="在webpack-构建的项目中使用Vue进行开发"><a href="#在webpack-构建的项目中使用Vue进行开发" class="headerlink" title="在webpack 构建的项目中使用Vue进行开发"></a>在webpack 构建的项目中使用Vue进行开发</h4><p><img src="media/1567162955969.jpg" alt="1567162955969.jpg"></p>
-<p><img src="media/1567163248833.jpg" alt="1567163248833.jpg"></p>
-<p><img src="media/1567163386226.jpg" alt="1567163386226.jpg"></p>
-<blockquote>
-<p>使用import Vue from ‘vue’导入的是 vue.runtime.common.js不是vue.js</p>
-</blockquote>
-<p>使用<code>import Vue from &#39;../node_modules/vue/dist/vue.js&#39;</code>导入或使用<code>import Vue from &#39;vue&#39;</code>然后在webpack.config.js中添加resolve配置</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">'./src/main.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">    filename: <span class="string">'bundle.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">........</span><br><span class="line">  resolve:&#123;</span><br><span class="line">    alias:&#123;<span class="comment">//修改要导入的vue模块路径</span></span><br><span class="line">      <span class="string">'vue$'</span>:<span class="string">'vue/dist/vue.js'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-<p>:moon:在webpack导入.vue模板</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>默认无法打包vue，需要导入相关loader<code>cnpm i vue-loader vue-template-compiler -D</code></p>
-<p><a href="https://vue-loader.vuejs.org/guide/#manual-setup" target="_blank" rel="noopener">https://vue-loader.vuejs.org/guide/#manual-setup</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"><span class="keyword">const</span> VueLoaderPlugin = <span class="built_in">require</span>(<span class="string">'vue-loader/lib/plugin'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      <span class="comment">// ... other rules</span></span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.vue$/</span>,</span><br><span class="line">        loader: <span class="string">'vue-loader'</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="comment">// make sure to include the plugin!</span></span><br><span class="line">    <span class="keyword">new</span> VueLoaderPlugin()</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><strong>The plugin is required!</strong> It is responsible for cloning any other rules you have defined and applying them to the corresponding language blocks in <code>.vue</code> files. For example, if you have a rule matching <code>/\.js$/</code>, it will be applied to <code>&lt;script&gt;</code> blocks in <code>.vue</code> files.</p>
-</blockquote>
-<p>在webpack使用 render进行渲染</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> login <span class="keyword">from</span> <span class="string">'./login.vue'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> vue = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="string">'#app'</span>,</span><br><span class="line">    data:&#123;</span><br><span class="line">        msg:<span class="string">'this is a msg'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    render:<span class="function"><span class="keyword">function</span>(<span class="params">r</span>)</span>&#123;<span class="comment">// render属性是一个函数，形参可以随便写</span></span><br><span class="line">        <span class="keyword">return</span> r(login)<span class="comment">//返回的值会替换调'#app'这个容器</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="export-defalut-和export"><a href="#export-defalut-和export" class="headerlink" title="export defalut 和export"></a>export defalut 和export</h4><ol>
-<li>在模块中只允许export defalut 暴露一次</li>
-<li>export defalut 暴露的成员可以使用任意变量接收</li>
-<li>在一个模块中可以同时使用export default和export</li>
-<li>使用export向外暴露的成员只能用<code>{}</code>来接收</li>
-</ol>
-<h4 id="vue在webpack中使用"><a href="#vue在webpack中使用" class="headerlink" title="vue在webpack中使用"></a>vue在webpack中使用</h4>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/1970/01/01/maven/maven%E5%A4%9A%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="Jiyu Wu">
-      <meta itemprop="description" content="Viva La Vida">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="简素">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/1970/01/01/maven/maven%E5%A4%9A%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/" class="post-title-link" itemprop="url">maven/maven多模块构建</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：1970-01-01 08:00:00" itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-29 02:27:14" itemprop="dateModified" datetime="2020-04-29T02:27:14+08:00">2020-04-29</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>595</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="Maven多模块构建"><a href="#Maven多模块构建" class="headerlink" title="Maven多模块构建"></a>Maven多模块构建</h4><p><code>maven</code>具有继承和聚合的特性。继承特性能抽取各个模块相同的相同的依赖和插件配置等，能够简化pom，同一管理插件和依赖。聚合特性能将多个模块聚合在一起。</p>
-<h5 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h5><p>用户可以在一个打包方式为<code>pom</code>的<code>maven</code>项目中使用任意数量的<code>&lt;module&gt;</code>元素来声明要聚合的项目。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">packaging</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;<span class="name">modules</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>module1<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>module2<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">modules</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<ol>
-<li>对于聚合模块其打包方式必须为<code>pom</code>，否则无法构建。</li>
-<li>module的值为当前<code>pom</code>文件的相对目录。</li>
-</ol>
-</blockquote>
-<p>聚合项目和其他项目的关系并非一定是父子关系(树形结构)，也可以使用平行目录。如果使用平行目录对应pom也要修改,使其之下正确的模块目录。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">packaging</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;<span class="name">modules</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>../module1<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>../module2<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">modules</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>对应聚合模块，可以删除无关的文件，只需保留pom.xml 文件。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/1970/01/01/%E5%B7%A5%E5%85%B7%E9%93%BE/Nginx/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="Jiyu Wu">
-      <meta itemprop="description" content="Viva La Vida">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="简素">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/1970/01/01/%E5%B7%A5%E5%85%B7%E9%93%BE/Nginx/" class="post-title-link" itemprop="url">工具链/Nginx</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：1970-01-01 08:00:00" itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-29 02:27:14" itemprop="dateModified" datetime="2020-04-29T02:27:14+08:00">2020-04-29</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="Nginx源码安装配置"><a href="#Nginx源码安装配置" class="headerlink" title="Nginx源码安装配置"></a>Nginx源码安装配置</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装make</span></span><br><span class="line">yum -y install gcc automake autoconf libtool make</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装g++</span></span><br><span class="line">yum install gcc gcc-c++</span><br></pre></td></tr></table></figure>
-<p>先装pcre, zlib，前者为了重写rewrite，后者为了gzip压缩。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">wget p://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.43.tar.gz</span><br><span class="line"></span><br><span class="line">tar -zxvf pcre-8.37.tar.gz</span><br><span class="line">cd pcre-8.43</span><br><span class="line"></span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/src</span><br><span class="line"> </span><br><span class="line">wget https://nchc.dl.sourceforge.net/project/libpng/zlib/1.2.11/zlib-1.2.11.tar.gz</span><br><span class="line">tar -zxvf zlib-1.2.11.tar.gz</span><br><span class="line">cd zlib-1.2.11</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<p>安装Nginx</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/src</span><br><span class="line">wget [root@master zlib-1.2.11]# wget http://nginx.org/download/nginx-1.14.2.tar.gz</span><br><span class="line">tar -zxvf nginx-1.14.2.tar.gz</span><br><span class="line">cd nginx-1.14.2</span><br><span class="line"></span><br><span class="line">./configure --prefix=/usr/local/nginx --conf-path=/etc/nginx</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<p>启动NGINX</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin</span><br><span class="line">.&#x2F;nginx</span><br></pre></td></tr></table></figure>
-
-<h4 id="yum安装Nginx"><a href="#yum安装Nginx" class="headerlink" title="yum安装Nginx"></a>yum安装Nginx</h4><p>参考NGINX cookbook</p>
-<ol>
-<li><p>create a file named /etc/yum.repos.d/nginx.repo that contains thefollowing contents:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[nginx]</span><br><span class="line">name&#x3D;nginx repo</span><br><span class="line">baseurl&#x3D;http:&#x2F;&#x2F;nginx.org&#x2F;packages&#x2F;mainline&#x2F;OS&#x2F;OSRELEASE&#x2F;$basearch&#x2F;</span><br><span class="line">gpgcheck&#x3D;0</span><br><span class="line">enabled&#x3D;1</span><br></pre></td></tr></table></figure></li>
-<li><p><strong>Alter the file, replacing OS at the end of the URL with rhel or centos, depending on your distribution. Replace OSRELEASE with 6 or 7for version 6.x or 7.x, respectively.</strong> eg:<code>baseurl=http://nginx.org/packages/mainline/centos/7/$basearch/</code></p>
-</li>
-<li><p>Then, run the followingcommands:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">yum -y install nginx</span><br><span class="line">systemctl enable nginx</span><br><span class="line"></span><br><span class="line">systemctl start nginx</span><br><span class="line">firewall-cmd --permanent --zone&#x3D;public --add-port&#x3D;80&#x2F;tcp</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h4 id="Nginx-文件结构"><a href="#Nginx-文件结构" class="headerlink" title="Nginx 文件结构"></a>Nginx 文件结构</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;etc&#x2F;nginx --主配置文件目录</span><br><span class="line">|-- conf.d</span><br><span class="line">|   &#96;-- default.conf</span><br><span class="line">|-- fastcgi_params</span><br><span class="line">|-- koi-utf</span><br><span class="line">|-- koi-win</span><br><span class="line">|-- mime.types</span><br><span class="line">|-- modules -&gt; ..&#x2F;..&#x2F;usr&#x2F;lib64&#x2F;nginx&#x2F;modules</span><br><span class="line">|-- nginx.conf -- 配置文件入口</span><br><span class="line">|-- scgi_params</span><br><span class="line">|-- uwsgi_params</span><br><span class="line">&#96;-- win-utf</span><br></pre></td></tr></table></figure>
-
-<p><em>/etc/nginx/</em></p>
-<p>​        The <em>/etc/nginx</em>  directory is the default  configuratio root forthe <strong>NGINX</strong> server</p>
-<p><em>/etc/nginx/nginx.conf</em></p>
-<p>​        The  <em>/etc/nginx/nginx.conf</em> file is the default configuration entry point used by the  <strong>NGINX</strong>  service</p>
-<p><em>/etc/nginx/conf.d/</em><br>        The  <em>/etc/nginx/conf.d/</em> directory contains the default HTTPserver configuration file.</p>
-<p><em>/var/log/nginx/</em><br>The  <em>/var/log/nginx/</em>  directory is the default log location for <strong>NGINX</strong>  . Within this directory you will find an access.log file and an error.log file.</p>
-<h4 id="Nginx-命令"><a href="#Nginx-命令" class="headerlink" title="Nginx 命令"></a>Nginx 命令</h4><p><code>nginx -h</code>   查看帮助菜单</p>
-<p><code>nginx  -v</code>   查看版本</p>
-<p><code>nginx  -V</code>  version, build information, and configuration arguments, which shows the modules built in to the NGINX binary. </p>
-<p><code>nginx -t</code> 测试配置文件</p>
-<p><code>ngix -T</code>  测试并输出配置文件</p>
-<p><code>nginx -s signal</code><br>The -s flag sends a signal to the NGINX master process. You can send signals such as <code>stop, quit, reload, and reopen</code>. The stop signal discontinues the NGINX process immediately. The quit signal stops the NGINX process after it finishes processing inflight requests.<strong>The reload signal reloads the configuration</strong>.The reopen signal instructs NGINX to reopen log files.</p>
-<h4 id="Nginx-静态资源目录"><a href="#Nginx-静态资源目录" class="headerlink" title="Nginx 静态资源目录"></a>Nginx 静态资源目录</h4><p><em>/ect/nginx/conf.d/</em> 目录中的默认配置文件<em>default.conf</em> </p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line"><span class="attribute">listen</span> <span class="number">80</span> default_server;</span><br><span class="line"><span class="attribute">server_name</span> www.example.com;</span><br><span class="line"><span class="attribute">location</span> / &#123;</span><br><span class="line">    <span class="attribute">root</span> /usr/share/nginx/html;</span><br><span class="line">    <span class="comment"># alias /usr/share/nginx/html;</span></span><br><span class="line">    <span class="attribute">index</span> index.html index.htm;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>note 如果配置没有将此上下文定义为default_server, NGINX将只在HTTP Host header与server_name指令提供的值匹配时才将请求定向到该服务器。location后面设置映射的路径，可以使用正则过滤URL。当查找被请求的文件时，<strong>请求的URI被附加到root指令的值</strong>。最后，index指令为NGINX提供了一个默认文件，或者一个要检查的文件列表，以防URI中没有提供进一步的路径。</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/1970/01/01/office/Untitled-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="Jiyu Wu">
-      <meta itemprop="description" content="Viva La Vida">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="简素">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/1970/01/01/office/Untitled-1/" class="post-title-link" itemprop="url">office/Untitled-1</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：1970-01-01 08:00:00" itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-29 02:27:14" itemprop="dateModified" datetime="2020-04-29T02:27:14+08:00">2020-04-29</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          {"definitions":{},"$schema":"http://json-schema.org/draft-07/schema#","$id":"http://example.com/root.json","type":"object","title":"JSON 判题规则","required":["score","knowledge","param","baseFile"],"properties":{"score":{"$id":"#/properties/score","type":"string","title":"分值","pattern":"^[1-9]\\d*\\.[0-9]{1}"},"knowledge":{"$id":"#/properties/knowledge","type":"string","title":"知识点编号"},"param":{"$id":"#/properties/param","type":"object","title":"知识点参数对象","required":["attribute1"],"properties":{"attribute1":{"$id":"#/properties/param/properties/attribute1","type":"string","title":"属性值"},"attribute2":{"$id":"#/properties/param/properties/attribute2","type":"string","title":"属性值"},"attribute3":{"$id":"#/properties/param/properties/attribute3","type":"object","title":"The Attribute3 Schema","properties":{"location":{"$id":"#/properties/location","type":"object","title":"定位对象"}}}}},"location":{"$id":"#/properties/location","type":"object","title":"定位元素对象","properties":{"lp":{"$id":"#/properties/param/properties/lp","type":"string","title":"定义参数"},"ls":{"$id":"#/properties/param/properties/ls","type":"string","title":"定义参数"},"lr":{"$id":"#/properties/param/properties/lr","type":"string","title":"定义参数"},"lo":{"$id":"#/properties/param/properties/lo","type":"string","title":"定义参数"}}},"baseFile":{"$id":"#/properties/baseFile","type":"string","title":"文档文件名"}}}
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/1970/01/01/algorithms/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E4%B8%B2%E7%9A%84%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="Jiyu Wu">
-      <meta itemprop="description" content="Viva La Vida">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="简素">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/1970/01/01/algorithms/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E4%B8%B2%E7%9A%84%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/" class="post-title-link" itemprop="url">algorithms/字符串/串的模式匹配</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：1970-01-01 08:00:00" itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-29 02:27:14" itemprop="dateModified" datetime="2020-04-29T02:27:14+08:00">2020-04-29</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>158</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="Knuth-Morris-Pratt子串查找算法"><a href="#Knuth-Morris-Pratt子串查找算法" class="headerlink" title="Knuth-Morris-Pratt子串查找算法"></a>Knuth-Morris-Pratt子串查找算法</h4><p>Knuth-Morris-Pratt (KMP) 基本思想是，当出现不匹配的时候，能够利用已知的一部分文本避免指针回退到这些文本之前。 KMP 算法的关键就是，如何判断模式指针回退的位数。 </p>
-<h4 id="基于Next-数组的KMP"><a href="#基于Next-数组的KMP" class="headerlink" title="基于Next[]数组的KMP"></a>基于Next[]数组的KMP</h4><h4 id="基于有限状态机的KMP"><a href="#基于有限状态机的KMP" class="headerlink" title="基于有限状态机的KMP"></a>基于有限状态机的KMP</h4><h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><p><a href="https://donche.github.io/2017/06/24/KMP.html" target="_blank" rel="noopener">KMP字符串查找算法的两种实现</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/1970/01/01/algorithms/%E6%8E%92%E5%BA%8F/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="Jiyu Wu">
-      <meta itemprop="description" content="Viva La Vida">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="简素">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/1970/01/01/algorithms/%E6%8E%92%E5%BA%8F/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">algorithms/排序/快速排序</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：1970-01-01 08:00:00" itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-29 02:27:14" itemprop="dateModified" datetime="2020-04-29T02:27:14+08:00">2020-04-29</time>
-              </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -1276,14 +285,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4><p><strong>快速排序</strong>（英语：Quicksort），又称<strong>划分交换排序</strong>（partition-exchange sort），简称<strong>快排</strong>，一种<a href="https://zh.wikipedia.org/wiki/排序算法" target="_blank" rel="noopener">排序算法</a>，最早由<a href="https://zh.wikipedia.org/wiki/東尼·霍爾" target="_blank" rel="noopener">东尼·霍尔</a>提出。在平均状况下，排序$n$个项目要$O(nlogn)$（<a href="https://zh.wikipedia.org/wiki/大O符号" target="_blank" rel="noopener">大O符号</a>）次比较。在最坏状况下则需要$O(n^2)$次比较，但这种状况并不常见。快速排序是一种分治的排序算法。快速排序通过选取一个元素，称为“基准”（pivot）。然后通过“分割”，重新排序数列，所有比基准值小的元素摆放在基准前面，所有比基准值大的元素摆在基准后面。这样就可以排定一个元素，并切分数组。然后使左右子数组有序，整个数组就序</p>
-<h5 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h5><ol>
-<li>选取一个元素作为“基准”，即那个将被排定的元素。一般选取第一个。</li>
-<li>从数组左端向右开始扫描找一个大于等于基准的数，如果找到记录位置，换右边扫描。</li>
-<li>左端停止后，右端开始向左扫描找一个小于基准的数。然后交换着两个数。</li>
-<li>左右交替扫描直到左右指针相遇</li>
-</ol>
-
+          
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/04/29/algorithms/%E6%8E%92%E5%BA%8F/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1302,10 +312,10 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/1970/01/01/algorithms/%E6%8E%92%E5%BA%8F/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">
+    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/2020/04/29/algorithms/%E6%8E%92%E5%BA%8F/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="image" content="/blog/images/avatar.jpg">
       <meta itemprop="name" content="Jiyu Wu">
       <meta itemprop="description" content="Viva La Vida">
     </span>
@@ -1316,7 +326,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/1970/01/01/algorithms/%E6%8E%92%E5%BA%8F/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">algorithms/排序/归并排序</a>
+            <a href="/blog/2020/04/29/algorithms/%E6%8E%92%E5%BA%8F/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">algorithms/排序/归并排序</a>
         </h2>
 
         <div class="post-meta">
@@ -1326,15 +336,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：1970-01-01 08:00:00" itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
+              <time title="创建时间：2020-04-29 02:27:14" itemprop="dateCreated datePublished" datetime="2020-04-29T02:27:14+08:00">2020-04-29</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-29 02:27:14" itemprop="dateModified" datetime="2020-04-29T02:27:14+08:00">2020-04-29</time>
+                <time title="修改时间：2020-04-30 18:28:25" itemprop="dateModified" datetime="2020-04-30T18:28:25+08:00">2020-04-30</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/algorithms/" itemprop="url" rel="index"><span itemprop="name">algorithms</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/algorithms/%E6%8E%92%E5%BA%8F/" itemprop="url" rel="index"><span itemprop="name">排序</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -1361,52 +384,779 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h4 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h4><h5 id="思路1"><a href="#思路1" class="headerlink" title="思路1"></a>思路1</h5><ol>
-<li>递归地将一个数组不断分成两半分别排序<br>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</li>
-<li><h1 id="然后-递归地-将两个有序的数组归并成一个更大的有序数组"><a href="#然后-递归地-将两个有序的数组归并成一个更大的有序数组" class="headerlink" title="然后(递归地)将两个有序的数组归并成一个更大的有序数组"></a>然后(递归地)将两个有序的数组<strong>归并</strong>成一个更大的有序数组</h1></li>
-<li>然后递归地将两个有序的数组<strong>归并</strong>成一个更大的有序数组<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>86b7659abece8e445f157d243c30ba0eb7b8b217</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-</ol>
-<h5 id="思路2"><a href="#思路2" class="headerlink" title="思路2"></a>思路2</h5><ol>
-<li>先归并微小是数组，然后在成对的归并得到是子数组</li>
-<li>每个元素可以看为大小为1的数组，然后归并成两个，归并成四个，八个一直下去</li>
-</ol>
-<h5 id="原地归并方法"><a href="#原地归并方法" class="headerlink" title="原地归并方法"></a>原地归并方法</h5><p><strong>问题</strong><br>对于一个数组<code>a[lo..hi]</code>，将它两个子有序数组<code>a[lo..mid]</code>和<code>a[mid+1..hi]</code>归并成一个有序数组并将结果存放在数组<code>a[lo..hi]</code>中。</p>
-<p><strong>思路</strong></p>
-<ol>
-<li><p>先复制所有的元素到aux[]中。</p>
-</li>
-<li><p>循环从aux[]的左右两个子数组<code>aux[lo..mid]</code>和<code>aux[mid+1..hi]</code>中取最小的元素到数组a中</p>
-</li>
-<li><p>选取条件：</p>
-<ul>
-<li><p>先判断左半边或者右半边是否取完,因为左右子数组已经排序，如果有一边已经取完，直接取另一边的元素(左边用尽,取右边的元素;右边用尽,取左边的元素)</p>
-</li>
-<li><p>如果子数组都没有取完，判断左边数组的当前元素和右边数组的当前元素，那个小就取那个元素</p>
-</li>
-</ul>
-</li>
-</ol>
-<p><strong>原地归并代码实现</strong>：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 原地归并方法,将a[lo..mid] 和 a[mid+1..hi]归并</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> a 要归并的数组</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> lo 左边数组第一个值的索引</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> mid 左边数组最后一个值的索引</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> hi 右边数组最后一个值的索引</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(Comparable[] a, <span class="keyword">int</span> lo, <span class="keyword">int</span> mid, <span class="keyword">int</span> hi)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = lo, j = mid+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = lo; k&lt;=hi; k++) &#123;</span><br><span class="line">        <span class="comment">//将a[lo..hi]复制到aux[lo..hi]</span></span><br><span class="line">        aux[k] = a[k];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 归并回到a[lo..hi]</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = lo; k&lt;=hi; k++) &#123;</span><br><span class="line">        <span class="comment">/** 左边数组取完*/</span></span><br><span class="line">        <span class="keyword">if</span> (i &gt; mid)&#123; a[k] = aux[j++]; &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (j &gt; hi) &#123; a[k] = aux[i++]; &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (less(aux[j],aux[i])) &#123; a[k] = aux[j++]; &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123; a[k] = aux[i++]; &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+          
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/04/29/algorithms/%E6%8E%92%E5%BA%8F/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
 
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/2020/04/29/algorithms/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E4%B8%B2%E7%9A%84%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/">
 
-<h5 id="自顶向下的归并排序"><a href="#自顶向下的归并排序" class="headerlink" title="自顶向下的归并排序"></a>自顶向下的归并排序</h5><h5 id="自底向上的归并排序"><a href="#自底向上的归并排序" class="headerlink" title="自底向上的归并排序"></a>自底向上的归并排序</h5>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.jpg">
+      <meta itemprop="name" content="Jiyu Wu">
+      <meta itemprop="description" content="Viva La Vida">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="简素">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/04/29/algorithms/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E4%B8%B2%E7%9A%84%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/" class="post-title-link" itemprop="url">algorithms/字符串/串的模式匹配</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-29 02:27:14" itemprop="dateCreated datePublished" datetime="2020-04-29T02:27:14+08:00">2020-04-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-30 18:28:25" itemprop="dateModified" datetime="2020-04-30T18:28:25+08:00">2020-04-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/algorithms/" itemprop="url" rel="index"><span itemprop="name">algorithms</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/algorithms/%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="index"><span itemprop="name">字符串</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>158</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/04/29/algorithms/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E4%B8%B2%E7%9A%84%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/2020/04/29/algorithms/algorithms/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.jpg">
+      <meta itemprop="name" content="Jiyu Wu">
+      <meta itemprop="description" content="Viva La Vida">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="简素">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/04/29/algorithms/algorithms/" class="post-title-link" itemprop="url">algorithms/algorithms</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-29 02:27:14" itemprop="dateCreated datePublished" datetime="2020-04-29T02:27:14+08:00">2020-04-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-30 18:28:25" itemprop="dateModified" datetime="2020-04-30T18:28:25+08:00">2020-04-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/algorithms/" itemprop="url" rel="index"><span itemprop="name">algorithms</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>863</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/04/29/algorithms/algorithms/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/2020/04/29/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.jpg">
+      <meta itemprop="name" content="Jiyu Wu">
+      <meta itemprop="description" content="Viva La Vida">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="简素">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/04/29/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" class="post-title-link" itemprop="url">23种设计模式/面向对象设计原则</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-29 02:27:14" itemprop="dateCreated datePublished" datetime="2020-04-29T02:27:14+08:00">2020-04-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-30 18:28:25" itemprop="dateModified" datetime="2020-04-30T18:28:25+08:00">2020-04-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">23种设计模式</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/04/29/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/2020/04/29/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E4%BB%80%E4%B9%88%E6%98%AF%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.jpg">
+      <meta itemprop="name" content="Jiyu Wu">
+      <meta itemprop="description" content="Viva La Vida">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="简素">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/04/29/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E4%BB%80%E4%B9%88%E6%98%AF%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">23种设计模式/什么是设计模式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-29 02:27:14" itemprop="dateCreated datePublished" datetime="2020-04-29T02:27:14+08:00">2020-04-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-30 18:28:25" itemprop="dateModified" datetime="2020-04-30T18:28:25+08:00">2020-04-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">23种设计模式</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/04/29/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E4%BB%80%E4%B9%88%E6%98%AF%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/2020/04/29/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/UML/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.jpg">
+      <meta itemprop="name" content="Jiyu Wu">
+      <meta itemprop="description" content="Viva La Vida">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="简素">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/04/29/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/UML/" class="post-title-link" itemprop="url">23种设计模式/UML</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-29 02:27:14" itemprop="dateCreated datePublished" datetime="2020-04-29T02:27:14+08:00">2020-04-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-30 18:28:25" itemprop="dateModified" datetime="2020-04-30T18:28:25+08:00">2020-04-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">23种设计模式</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>270</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/04/29/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/UML/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/2020/04/29/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Template%20Method/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.jpg">
+      <meta itemprop="name" content="Jiyu Wu">
+      <meta itemprop="description" content="Viva La Vida">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="简素">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/04/29/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Template%20Method/" class="post-title-link" itemprop="url">23种设计模式/Template Method</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-29 02:27:14" itemprop="dateCreated datePublished" datetime="2020-04-29T02:27:14+08:00">2020-04-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-30 18:28:25" itemprop="dateModified" datetime="2020-04-30T18:28:25+08:00">2020-04-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">23种设计模式</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>264</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/04/29/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Template%20Method/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/2020/04/29/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Strategy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.jpg">
+      <meta itemprop="name" content="Jiyu Wu">
+      <meta itemprop="description" content="Viva La Vida">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="简素">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/04/29/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Strategy/" class="post-title-link" itemprop="url">23种设计模式/Strategy</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-29 02:27:14" itemprop="dateCreated datePublished" datetime="2020-04-29T02:27:14+08:00">2020-04-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-30 18:28:25" itemprop="dateModified" datetime="2020-04-30T18:28:25+08:00">2020-04-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">23种设计模式</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>318</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/04/29/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Strategy/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/2020/04/29/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Singleton%20Pattern/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.jpg">
+      <meta itemprop="name" content="Jiyu Wu">
+      <meta itemprop="description" content="Viva La Vida">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="简素">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/04/29/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Singleton%20Pattern/" class="post-title-link" itemprop="url">23种设计模式/Singleton Pattern</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-29 02:27:14" itemprop="dateCreated datePublished" datetime="2020-04-29T02:27:14+08:00">2020-04-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-30 18:28:25" itemprop="dateModified" datetime="2020-04-30T18:28:25+08:00">2020-04-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">23种设计模式</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/blog/2020/04/29/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/Singleton%20Pattern/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1426,7 +1176,6 @@
   <nav class="pagination">
     <a class="extend prev" rel="prev" href="/blog/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/blog/page/5/">5</a><a class="extend next" rel="next" href="/blog/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
-
 
 
           </div>
@@ -1482,17 +1231,44 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jiyu Wu"
+      src="/blog/images/avatar.jpg">
+  <div id="aplayer"></div>
   <p class="site-author-name" itemprop="name">Jiyu Wu</p>
   <div class="site-description" itemprop="description">Viva La Vida</div>
 </div>
+<script>
+      const ap = new APlayer({
+      container: document.getElementById('aplayer'),
+      theme: '#e9e9e9',
+      listFolded: true,
+      audio: [{
+          name: 'ViVa La ViDa',
+          artist: 'Coldplay',
+          url: '/blog/media/vivalavida.mp3',
+          cover: 'http://p1.music.126.net/hr61PXeTWlfwoEmducM6Dg==/109951164930579776.jpg?param=130y130'
+      }, {
+          name: 'ViVa La ViDa',
+          artist: 'Coldplay',
+          url: '/blog/media/vivalavida.mp3',
+          cover: 'http://p1.music.126.net/hr61PXeTWlfwoEmducM6Dg==/109951164930579776.jpg?param=130y130'
+      }]
+  });
+  </script>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-count">48</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
         <span class="site-state-item-count">2</span>
@@ -1500,38 +1276,6 @@
       </div>
   </nav>
 </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.facebook.com/yourname" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://youtube.com/yourname" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="skype:yourname?call|chat" title="Sype → skype:yourname?call|chat" rel="noopener" target="_blank"><i class="fab fa-skype fa-fw"></i>Sype</a>
-      </span>
-  </div>
 
 
 
@@ -1550,7 +1294,6 @@
         
 
         
-
 <div class="copyright">
   
   &copy; 
@@ -1564,25 +1307,16 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">93k</span>
+    <span title="站点总字数">89k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:25</span>
+    <span title="站点阅读时长">1:21</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
-<div class="powered-by">
-<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
-  本站访客数:<span id="busuanzi_value_site_uv"></span>
-</span>
-<span id="busuanzi_container_site_pv">
-    本站总访问量<span id="busuanzi_value_site_pv"></span>次
-</span>
-</div>
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
         
 
@@ -1598,8 +1332,8 @@
   </div>
 
   
-  <script size="300" alpha="0.6" zIndex="-1" src="/blog/lib/canvas-ribbon/canvas-ribbon.js"></script>
   <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
   <script src="/blog/lib/velocity/velocity.min.js"></script>
   <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
 
@@ -1608,10 +1342,71 @@
 <script src="/blog/js/motion.js"></script>
 
 
-<script src="/blog/js/schemes/pisces.js"></script>
+<script src="/blog/js/schemes/muse.js"></script>
 
 
 <script src="/blog/js/next-boot.js"></script>
+
+<script src="/blog/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
 
 
 
@@ -1636,10 +1431,11 @@
 
 
 
+    <div id="pjax">
   
 
   
 
-
-<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+    </div>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/blog/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

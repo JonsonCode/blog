@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/logo.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mxdc.github.io","root":"/blog/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="spring源码解析&#x2F;IOC">
+<meta property="og:url" content="https://mxdc.github.io/blog/2020/04/29/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/IOC/index.html">
+<meta property="og:site_name" content="简素">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-28T18:27:14.828Z">
+<meta property="article:modified_time" content="2020-04-30T10:28:25.244Z">
+<meta property="article:author" content="Jiyu Wu">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://mxdc.github.io/blog/2020/04/29/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/IOC/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("http://localhost:4000/blog/"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+<!--
+<script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/e8ccbfa1.js","daovoice")
+daovoice('init', {
+  app_id: "e8ccbfa1"
+});
+daovoice('update');
+</script>
+-->
+
+<!-- Aplay -->
+<!-- require APlayer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+
+  <title>spring源码解析/IOC | 简素</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/blog/blog/atom.xml" title="简素" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">简素</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Viva La Vida</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section">首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section">分类<span class="badge">20</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section">归档<span class="badge">48</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mxdc.github.io/blog/2020/04/29/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/IOC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.jpg">
+      <meta itemprop="name" content="Jiyu Wu">
+      <meta itemprop="description" content="Viva La Vida">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="简素">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          spring源码解析/IOC
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-29 02:27:14" itemprop="dateCreated datePublished" datetime="2020-04-29T02:27:14+08:00">2020-04-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-30 18:28:25" itemprop="dateModified" datetime="2020-04-30T18:28:25+08:00">2020-04-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">spring源码解析</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h4><p>The <code>org.springframework.context.ApplicationContext</code> interface represents the Spring IoC container and is responsible for instantiating, configuring, and assembling the beans. </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.   AnnotationConfigApplicationContext</span><br><span class="line"><span class="number">2</span>.   <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"services.xml"</span>, <span class="string">"daos.xml"</span>);</span><br><span class="line"><span class="number">3</span>.   FileSystemXmlApplicationContext</span><br></pre></td></tr></table></figure>
+
+<p>Within the container itself, these bean definitions are represented as <code>BeanDefinition</code> objects,</p>
+<h4 id="组件注册"><a href="#组件注册" class="headerlink" title="组件注册"></a>组件注册</h4><hr>
+<h5 id="包扫描-组件注解-Service-Controller-Component-Repository"><a href="#包扫描-组件注解-Service-Controller-Component-Repository" class="headerlink" title="包扫描+组件注解(@Service/@Controller/@Component/@Repository)"></a>包扫描+组件注解(@Service/@Controller/@Component/@Repository)</h5><h5 id="Bean"><a href="#Bean" class="headerlink" title="@Bean"></a>@Bean</h5><h5 id="Conditional按条件注册Bean"><a href="#Conditional按条件注册Bean" class="headerlink" title="@Conditional按条件注册Bean"></a>@Conditional按条件注册Bean</h5><h5 id="Import"><a href="#Import" class="headerlink" title="@Import"></a>@Import</h5><ul>
+<li>@Import</li>
+<li>ImportSelector</li>
+<li>ImportBeanDefinitionRegistrar</li>
+</ul>
+<p>FactoryBean</p>
+<h4 id="Bean生命周期"><a href="#Bean生命周期" class="headerlink" title="Bean生命周期"></a>Bean生命周期</h4><p>loadBeanDefinition–new bean– lifecyclecallback- 主动注入 -初始化— —销毁</p>
+<ol>
+<li><p>加载配置，扫描配置文件</p>
+</li>
+<li><p>加载bean的元素数据包装成BeanDefinition</p>
+</li>
+<li><p>执行BeanFactoryPostProcessor</p>
+<p>finishBeanFactoryInitialization(),下面是实例化bean</p>
+</li>
+</ol>
+<ol start="4">
+<li><p>实例化（Instantiation）</p>
+<p>—第一次应用后置处理器。InstantiationAwareBeanPostProcessor$postProcessBeforeInstantiation</p>
+<p>—第二次应用后置处理器。InstantiationAwareBeanPostProcessor$postProcessPropertyValues</p>
+<p>—利用依赖注入设置属性</p>
+<p>— BeanNameAware（作用：<strong>让Bean获取自己在BeanFactory配置中的名字（根据情况是id或者name）。</strong>）</p>
+<p>—BeanClassLoaderAware</p>
+<p>— BeanFactoryAware（作用：<strong>让Bean获取配置他们的BeanFactory的引用。</strong>）</p>
+<p>—-applyBeanPostProcessorsBeforeInitialization</p>
+<hr>
+<p>—6.初始化(<strong>Lifecyle Callbacks</strong>)（（@PostConstruct先）先调用afterPropertiesSet，在调用自定义初始化方法）</p>
+<p>​    |—- Initialization Callbacks</p>
+<p>​    |—- Destruction Callbacks</p>
+<p>—applyBeanPostProcessorsAfterInitialization</p>
+</li>
+</ol>
+<hr>
+<ol>
+<li>InstantiationAwareBeanPostProcessor接口继承BeanPostProcessor接口，它内部提供了3个方法，再加上BeanPostProcessor接口内部的2个方法，所以实现这个接口需要实现5个方法。InstantiationAwareBeanPostProcessor接口的主要作用在于目标对象的实例化过程中需要处理的事情，包括实例化对象的前后过程以及实例的属性设置</li>
+<li>postProcessBeforeInstantiation方法是最先执行的方法，它在目标对象实例化之前调用，该方法的返回值类型是Object，我们可以返回任何类型的值。由于这个时候目标对象还未实例化，所以这个返回值可以用来代替原本该生成的目标对象的实例(比如代理对象)。如果该方法的返回值代替原本该生成的目标对象，后续只有postProcessAfterInitialization方法会调用，其它方法不再调用；否则按照正常的流程走</li>
+<li>postProcessAfterInstantiation方法在目标对象实例化之后调用，这个时候对象已经被实例化，但是该实例的属性还未被设置，都是null。如果该方法返回false，会忽略属性值的设置；如果返回true，会按照正常流程设置属性值</li>
+<li>postProcessPropertyValues方法对属性值进行修改(这个时候属性值还未被设置，但是我们可以修改原本该设置进去的属性值)。如果postProcessAfterInstantiation方法返回false，该方法不会被调用。可以在该方法内对属性值进行修改</li>
+</ol>
+<hr>
+<h5 id="Lifecycle-Callbacks"><a href="#Lifecycle-Callbacks" class="headerlink" title="Lifecycle Callbacks"></a>Lifecycle Callbacks</h5><ul>
+<li><strong>Initialization Callbacks</strong>是在执行构造方法之后，<strong>Destruction Callbacks</strong>是销毁之前。有三种方式实现</li>
+</ul>
+<p>1)指定初始化方法和销毁方法</p>
+<p>​    指定init-mtthod和destory-method</p>
+<p>​    @Bean(initMethod=”init”,destroyMethod=”destroy”)    </p>
+<p>2）让Bean实现InitializingBean,DisposbleBean</p>
+<p>2）使用JSR250（用在方法上面）</p>
+<p>​    @PostConstruct,在bean创建完成之前并且属性赋值完成，来执行初始化方法</p>
+<p>​    @PreDestory，在容器销毁bean之前通知我们进行清理</p>
+<ul>
+<li><h5 id="Startup-and-Shutdown-Callbacks"><a href="#Startup-and-Shutdown-Callbacks" class="headerlink" title="Startup and Shutdown Callbacks"></a>Startup and Shutdown Callbacks</h5></li>
+</ul>
+<hr>
+<p>BeanFactoryPostProcessor和BeanPostProcessor，这两个接口，都是Spring初始化bean时对外暴露的扩展点。两个接口名称看起来很相似，但作用及使用场景却不同</p>
+<h4 id="BeanFactoryPostProcessor"><a href="#BeanFactoryPostProcessor" class="headerlink" title="BeanFactoryPostProcessor"></a>BeanFactoryPostProcessor</h4><p>是一个接口，加载类后(类信息被抽象在BeanDefinition)还没有实例化。可以在spring的bean创建之前，修改bean的定义属性。</p>
+<h4 id="bean的实例化"><a href="#bean的实例化" class="headerlink" title="bean的实例化"></a>bean的实例化</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Trigger initialization of all non-lazy singleton beans...</span></span><br><span class="line">	<span class="keyword">for</span> (String beanName : beanNames) &#123;</span><br><span class="line">	    .....</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>执行finishBeanFactoryInitialization(beanFactory);</p>
+</li>
+<li><p>beanFactory.preInstantiateSingletons(),preInstantiateSingletons()是ConfigurableListableBeanFactory一个接口方法。DefaultListableBeanFactory是实现类。</p>
+</li>
+<li><p>执行perInstantiateSingletons()时先判断<code>if (!bd.isAbstract() &amp;&amp; bd.isSingleton() &amp;&amp; !bd.isLazyInit())</code>单列、懒加载。如果是则在判断<code>if (isFactoryBean(beanName)){}else{getBean(beanName); }。</code>factoryBean是一个特殊bean。如果不factoryBean是普通bean则调用<code>getBen(beanName)</code>。</p>
+</li>
+</ol>
+<blockquote>
+<p>为啥是getBean而不是newBean,createBean?是为了判断是否已经存在bean了，避免重复实例化。</p>
+</blockquote>
+<ol start="4">
+<li>getBean会调用doGetBean,doGetBean()方法里面先执行transformedBeanName()规范beanName。然后第一次调用getSingleton(beanName),<code>private final Map&lt;String, Object&gt; singletonObjects = new ConcurrentHashMap&lt;&gt;(256);</code>就是从<code>singletonObjects</code>中获取bean,它就是个ConcurrentHashMap&lt;&gt;(256)如果没被实例化就会返回null;isSingletonCurrentlyInCreation`,</li>
+</ol>
+<blockquote>
+<p>isSingletonCurrentlyInCreation<code>,// 循环依赖问题A--&gt;B --&gt;A，new 出对象后还没最终在容器中生成bean，还要走完生命周期。</code></p>
+</blockquote>
+<ol start="5">
+<li><p>(1)Check if bean definition exists in this factory. (2) Guarantee initialization of beans that the current bean depends on.(3) Create bean instance.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">CREATE_BEAN_INSTANCE--&gt;Decision&#123;mbd.isSingleton&#125;</span><br><span class="line">Decision --&gt;|true| getSingleton</span><br><span class="line">Decision --&gt;|else if mbd.isPrototype| D[Result one]</span><br><span class="line">Decision--&gt;|else| E[Result two]</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<p>​        第二次调用getSingleton</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sharedInstance = getSingleton(beanName, () -&gt; &#123;</span><br><span class="line">						<span class="keyword">try</span> &#123;</span><br><span class="line">							<span class="keyword">return</span> createBean(beanName, mbd, args);<span class="comment">//创建bean</span></span><br><span class="line">						&#125;</span><br><span class="line">						<span class="keyword">catch</span> (BeansException ex) &#123;</span><br><span class="line">							<span class="comment">// Explicitly remove instance from singleton cache: It might have been put there</span></span><br><span class="line">							<span class="comment">// eagerly by the creation process, to allow for circular reference resolution.</span></span><br><span class="line">							<span class="comment">// Also remove any beans that received a temporary reference to the bean.</span></span><br><span class="line">							destroySingleton(beanName);</span><br><span class="line">							<span class="keyword">throw</span> ex;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="BeanPostProcessor"><a href="#BeanPostProcessor" class="headerlink" title="BeanPostProcessor"></a>BeanPostProcessor</h4><p>spring 实例化 包括初始化</p>
+<p>初始化 new bean()之后的过程</p>
+<p>new —-XXXXBeanPostProcessor —A —-@PostConstruct —–BeanPostProcessor</p>
+<blockquote>
+<p>!!!! Instantiation的过程是包括Initialization的。BeanPostProcessor接口只能管理Initialization的阶段。但还有很多接口是继承了BeanPostProcessor接口的。像InstantiationAwareBeanPostProcessor extends BeanPostProcessor。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>9个地方，5个后置处理器</p>
+<p>1.Object bean = resolveBeforeInstantiation(beanName, mbdToUse);</p>
+</blockquote>
+<p>BeanPostProcessor，可以在spring容器new了bean之后，在执行bean的初始化方法前后，添加一些自己的处理逻辑。如果配置了多个<code>BeanPostProcessor</code>，那么可以通过设置<code>&#39;order&#39;</code>属性来控制<code>BeanPostProcessor</code>的执行次序（仅当<code>BeanPostProcessor</code>实现了<code>Ordered</code>接口时，你才可以设置此属性，因此在编写自己的<code>BeanPostProcessor</code>实现时，就得考虑是否需要实现<code>Ordered</code>接口）。此时对应的bean已经实例化了，但是对应的属性注入等还没有进行，即在调用InitializingBean的afterPropertiesSet()方法或bean对应的init-method之前；而方法postProcessAfterInitialization()将在bean被完全初始化后进行回调，此时对应的依赖注入已经完成，即在调用InitializingBean的afterPropertiesSet()方法或对应init-method方法之后。两个方法的参数以及返回值对应的意义都是一样的，其中参数bean表示当前状态的bean，参数beanName表示当前bean的名称，而方法对应的返回值即表示需要放入到bean容器中的bean，所以用户如果有需要完全可以在这两个方法中对bean进行修改，即封装自己的bean进行返回。</p>
+<blockquote>
+<p>实现了BeanPostProcessor的bean，不会被postProcessBeforeInitialization,和postProcessAfterInitialization当做参数调用。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">BeanPostProcessor</span> </span>&#123;</span><br><span class="line">    <span class="comment">//bean初始化方法调用前被调用,返回null不会使bean为空，返回其他对象可以代替原有对象</span></span><br><span class="line">   <span class="function"><span class="keyword">default</span> Object <span class="title">postProcessBeforeInitialization</span><span class="params">(Object bean, String beanName)</span> <span class="keyword">throws</span> BeansException</span>;</span><br><span class="line">    <span class="comment">//bean初始化方法调用后被调用</span></span><br><span class="line">   <span class="function"><span class="keyword">default</span> Object <span class="title">postProcessAfterInitialization</span><span class="params">(Object bean, String beanName)</span> <span class="keyword">throws</span> BeansException</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里说的初始化方法，指的是下面两种：<br>1）bean实现了InitializingBean接口，对应的方法为afterPropertiesSet</p>
+<p>2）在bean定义的时候，通过init-method设置的方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line"></span><br><span class="line">A[A:AnnotationConfigApplicationContext]</span><br><span class="line">B((A.refresh))</span><br><span class="line">1.4[postProcessBeanFactory]</span><br><span class="line">1.5[invokeBeanFactoryPostProcessors]</span><br><span class="line">1.6[registerBeanPostProcessors]</span><br><span class="line">A --&gt; B</span><br><span class="line">subgraph 1</span><br><span class="line">	B --&gt; 1.4</span><br><span class="line">	1.4 --&gt; 1.5</span><br><span class="line">	1.5 --&gt; 1.6</span><br><span class="line">	subgraph 1.6</span><br><span class="line">		1.6 --&gt; 1.6.1</span><br><span class="line">	end</span><br><span class="line">end</span><br><span class="line">A.finishRefresh((finishRefresh))--&gt;beanFactory.preInstantiateSingletons</span><br><span class="line">beanFactory.preInstantiateSingletons --&gt;preInstantiateSingletons</span><br><span class="line">preInstantiateSingletons --&gt; |Loop|getBean</span><br><span class="line">subgraph Trigger initialization of all non-lazy singleton beans</span><br><span class="line">getBean --&gt; getSingleton</span><br><span class="line">getSingleton --&gt;singletonFactory.getObject</span><br><span class="line">singletonFactory.getObject--&gt;doGetBean</span><br><span class="line">doGetBean --&gt;createBean</span><br><span class="line">createBean --&gt;doCreateBean</span><br><span class="line">doCreateBean --&gt; initializeBean</span><br><span class="line">initializeBean--&gt;applyBeanPostProcessorsBeforeInitialization</span><br><span class="line">applyBeanPostProcessorsBeforeInitialization --&gt;processor.postProcessBeforeInitialization</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>有趣的添加了@configuration的bean,是被spring的cllib增强的代理类。com.mxdc.Config$$EnhancerBySpringCGLIB$$aff7e6e7</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/blog/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2020/04/29/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/AOP/" rel="prev" title="spring源码解析/AOP">
+      <i class="fa fa-chevron-left"></i> spring源码解析/AOP
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2020/04/29/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/SpringFramework%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85/" rel="next" title="spring源码解析/SpringFramework源码安装">
+      spring源码解析/SpringFramework源码安装 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#IOC"><span class="nav-number">1.</span> <span class="nav-text">IOC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#组件注册"><span class="nav-number">2.</span> <span class="nav-text">组件注册</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#包扫描-组件注解-Service-Controller-Component-Repository"><span class="nav-number">2.1.</span> <span class="nav-text">包扫描+组件注解(@Service&#x2F;@Controller&#x2F;@Component&#x2F;@Repository)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bean"><span class="nav-number">2.2.</span> <span class="nav-text">@Bean</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Conditional按条件注册Bean"><span class="nav-number">2.3.</span> <span class="nav-text">@Conditional按条件注册Bean</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Import"><span class="nav-number">2.4.</span> <span class="nav-text">@Import</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Bean生命周期"><span class="nav-number">3.</span> <span class="nav-text">Bean生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Lifecycle-Callbacks"><span class="nav-number">3.1.</span> <span class="nav-text">Lifecycle Callbacks</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Startup-and-Shutdown-Callbacks"><span class="nav-number">3.2.</span> <span class="nav-text">Startup and Shutdown Callbacks</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BeanFactoryPostProcessor"><span class="nav-number">4.</span> <span class="nav-text">BeanFactoryPostProcessor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bean的实例化"><span class="nav-number">5.</span> <span class="nav-text">bean的实例化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BeanPostProcessor"><span class="nav-number">6.</span> <span class="nav-text">BeanPostProcessor</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jiyu Wu"
+      src="/blog/images/avatar.jpg">
+  <div id="aplayer"></div>
+  <p class="site-author-name" itemprop="name">Jiyu Wu</p>
+  <div class="site-description" itemprop="description">Viva La Vida</div>
+</div>
+<script>
+      const ap = new APlayer({
+      container: document.getElementById('aplayer'),
+      theme: '#e9e9e9',
+      listFolded: true,
+      audio: [{
+          name: 'ViVa La ViDa',
+          artist: 'Coldplay',
+          url: '/blog/media/vivalavida.mp3',
+          cover: 'http://p1.music.126.net/hr61PXeTWlfwoEmducM6Dg==/109951164930579776.jpg?param=130y130'
+      }, {
+          name: 'ViVa La ViDa',
+          artist: 'Coldplay',
+          url: '/blog/media/vivalavida.mp3',
+          cover: 'http://p1.music.126.net/hr61PXeTWlfwoEmducM6Dg==/109951164930579776.jpg?param=130y130'
+      }]
+  });
+  </script>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jiyu Wu</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">89k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:21</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/muse.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+<script src="/blog/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/blog/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html>

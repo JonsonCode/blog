@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>简素</title>
+  
+  <subtitle>Viva La Vida</subtitle>
+  <link href="/blog//blog/atom.xml" rel="self"/>
+  
+  <link href="https://mxdc.github.io/blog/"/>
+  <updated>2020-04-30T10:28:25.244Z</updated>
+  <id>https://mxdc.github.io/blog/</id>
+  
+  <author>
+    <name>Jiyu Wu</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>工具链/Nginx</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/%E5%B7%A5%E5%85%B7%E9%93%BE/Nginx/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/%E5%B7%A5%E5%85%B7%E9%93%BE/Nginx/</id>
+    <published>2020-04-28T18:27:14.894Z</published>
+    <updated>2020-04-30T10:28:25.244Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="工具链" scheme="https://mxdc.github.io/blog/categories/%E5%B7%A5%E5%85%B7%E9%93%BE/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vue/vue</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/vue/vue/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/vue/vue/</id>
+    <published>2020-04-28T18:27:14.893Z</published>
+    <updated>2020-04-30T10:28:25.244Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://mxdc.github.io/blog/categories/vue/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vue/Vue核心属性</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/vue/Vue%E6%A0%B8%E5%BF%83%E5%B1%9E%E6%80%A7/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/vue/Vue%E6%A0%B8%E5%BF%83%E5%B1%9E%E6%80%A7/</id>
+    <published>2020-04-28T18:27:14.837Z</published>
+    <updated>2020-04-30T10:28:25.244Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://mxdc.github.io/blog/categories/vue/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vue/Vue-ssr</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/vue/Vue-ssr/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/vue/Vue-ssr/</id>
+    <published>2020-04-28T18:27:14.835Z</published>
+    <updated>2020-04-30T10:28:25.244Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://mxdc.github.io/blog/categories/vue/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vue/Vuex</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/vue/Vuex/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/vue/Vuex/</id>
+    <published>2020-04-28T18:27:14.835Z</published>
+    <updated>2020-04-30T10:28:25.244Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://mxdc.github.io/blog/categories/vue/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vue/Vue-router</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/vue/Vue-router/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/vue/Vue-router/</id>
+    <published>2020-04-28T18:27:14.834Z</published>
+    <updated>2020-04-30T10:28:25.239Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://mxdc.github.io/blog/categories/vue/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vue/PromiseAndAxiso</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/vue/PromiseAndAxiso/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/vue/PromiseAndAxiso/</id>
+    <published>2020-04-28T18:27:14.833Z</published>
+    <updated>2020-04-30T10:28:25.244Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://mxdc.github.io/blog/categories/vue/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vue/Vue-cli</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/vue/Vue-cli/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/vue/Vue-cli/</id>
+    <published>2020-04-28T18:27:14.833Z</published>
+    <updated>2020-04-30T10:28:25.244Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://mxdc.github.io/blog/categories/vue/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>spring源码解析/springBoot源码安装</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/springBoot%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/springBoot%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85/</id>
+    <published>2020-04-28T18:27:14.831Z</published>
+    <updated>2020-04-30T10:28:25.244Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="spring源码解析" scheme="https://mxdc.github.io/blog/categories/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>spring源码解析/SpringMvc</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/SpringMvc/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/SpringMvc/</id>
+    <published>2020-04-28T18:27:14.830Z</published>
+    <updated>2020-04-30T10:28:25.244Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="spring源码解析" scheme="https://mxdc.github.io/blog/categories/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>spring源码解析/SpringFramework源码安装</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/SpringFramework%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/SpringFramework%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85/</id>
+    <published>2020-04-28T18:27:14.829Z</published>
+    <updated>2020-04-30T10:28:25.244Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="spring源码解析" scheme="https://mxdc.github.io/blog/categories/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>spring源码解析/IOC</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/IOC/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/IOC/</id>
+    <published>2020-04-28T18:27:14.828Z</published>
+    <updated>2020-04-30T10:28:25.244Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="spring源码解析" scheme="https://mxdc.github.io/blog/categories/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>spring源码解析/AOP</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/AOP/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/AOP/</id>
+    <published>2020-04-28T18:27:14.827Z</published>
+    <updated>2020-04-30T10:28:25.243Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="spring源码解析" scheme="https://mxdc.github.io/blog/categories/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>spring/annotation</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/spring/annotation/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/spring/annotation/</id>
+    <published>2020-04-28T18:27:14.826Z</published>
+    <updated>2020-04-30T10:28:25.243Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="spring" scheme="https://mxdc.github.io/blog/categories/spring/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>office/office判题</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/office/office%E5%88%A4%E9%A2%98/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/office/office%E5%88%A4%E9%A2%98/</id>
+    <published>2020-04-28T18:27:14.824Z</published>
+    <updated>2020-04-30T10:28:25.243Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="office" scheme="https://mxdc.github.io/blog/categories/office/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>office/docx 格式简介</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/office/docx%20%E6%A0%BC%E5%BC%8F%E7%AE%80%E4%BB%8B/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/office/docx%20%E6%A0%BC%E5%BC%8F%E7%AE%80%E4%BB%8B/</id>
+    <published>2020-04-28T18:27:14.757Z</published>
+    <updated>2020-04-30T10:28:25.243Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="office" scheme="https://mxdc.github.io/blog/categories/office/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>office/Untitled-1</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/office/Untitled-1/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/office/Untitled-1/</id>
+    <published>2020-04-28T18:27:14.756Z</published>
+    <updated>2020-04-30T10:28:25.243Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="office" scheme="https://mxdc.github.io/blog/categories/office/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>maven/maven多模块构建</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/maven/maven%E5%A4%9A%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/maven/maven%E5%A4%9A%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/</id>
+    <published>2020-04-28T18:27:14.743Z</published>
+    <updated>2020-04-30T10:28:25.242Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="maven" scheme="https://mxdc.github.io/blog/categories/maven/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>linux/bash shell命令</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/linux/bash%20shell%E5%91%BD%E4%BB%A4/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/linux/bash%20shell%E5%91%BD%E4%BB%A4/</id>
+    <published>2020-04-28T18:27:14.714Z</published>
+    <updated>2020-04-30T10:28:25.243Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="https://mxdc.github.io/blog/categories/linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>java/java虚拟机/虚拟机运行时数据区</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/java/java%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/java/java%E8%99%9A%E6%8B%9F%E6%9C%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA/</id>
+    <published>2020-04-28T18:27:14.711Z</published>
+    <updated>2020-04-30T10:28:25.247Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="java" scheme="https://mxdc.github.io/blog/categories/java/"/>
+    
+      <category term="java虚拟机" scheme="https://mxdc.github.io/blog/categories/java/java%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+    
+  </entry>
+  
+</feed>
