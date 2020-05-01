@@ -229,7 +229,7 @@ daovoice('update');
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          vue/PromiseAndAxiso
+          vue/PromiseAndAxiso<a href="https://github.com/MXDC/note/tree/master/vue/PromiseAndAxiso.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil-alt"></i></a>
         </h1>
 
         <div class="post-meta">
@@ -329,12 +329,12 @@ daovoice('update');
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/blog/2020/04/29/vue/Vue-cli/" rel="prev" title="vue/Vue-cli">
-      <i class="fa fa-chevron-left"></i> vue/Vue-cli
+    <a href="/blog/2020/04/29/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/springBoot%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85/" rel="prev" title="spring源码解析/springBoot源码安装">
+      <i class="fa fa-chevron-left"></i> spring源码解析/springBoot源码安装
     </a></div>
       <div class="post-nav-item">
-    <a href="/blog/2020/04/29/vue/Vue-router/" rel="next" title="vue/Vue-router">
-      vue/Vue-router <i class="fa fa-chevron-right"></i>
+    <a href="/blog/2020/04/29/vue/Vue-cli/" rel="next" title="vue/Vue-cli">
+      vue/Vue-cli <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -598,6 +598,19 @@ window.addEventListener('pjax:success', () => {
 
 
 
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
     <div id="pjax">
@@ -606,5 +619,12 @@ window.addEventListener('pjax:success', () => {
   
 
     </div>
+  <meting-js
+	server="netease"
+	type="playlist"
+  fixed="true"
+  lrcType="3"
+  id="504782371">
+</meting-js>
 <script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/blog/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

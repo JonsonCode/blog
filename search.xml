@@ -289,14 +289,24 @@
 <li><p>动态：在使用(复用)子组件时，通过<code>v-bind:pmsg</code>=”msg”，向子组件props中定义的<code>pmsg</code>传递父组件<code>data</code>中的<code>msg</code>数据。</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[属性]</span><br><span class="line">A1[自定义属性props]--&gt;A11[props中声明的属性]</span><br><span class="line">A2[原生属性attrs]--&gt;A21[默认自动挂载到组件根元素上,inheritAttrs为false关闭挂载]</span><br><span class="line">A3[特殊属性class,style]</span><br><span class="line">A--&gt;A1 </span><br><span class="line">A--&gt;A2</span><br><span class="line">A--&gt;A3</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">graph LR
+A[属性]
+A1[自定义属性props]-->A11[props中声明的属性]
+A2[原生属性attrs]-->A21[默认自动挂载到组件根元素上,inheritAttrs为false关闭挂载]
+A3[特殊属性class,style]
+A-->A1 
+A-->A2
+A-->A3</pre>
 
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 通过v-bind绑定自定义属性pmsg到msg --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 自定义属性pmgs在props数组中定义才可以在子组件中使用 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">com1</span> <span class="attr">v-bind:pmsg</span>=<span class="string">"msg"</span>&gt;</span><span class="tag">&lt;/<span class="name">com1</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> v =<span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">'#app'</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            msg:<span class="string">"hello world"</span></span></span><br><span class="line">        &#125;,</span><br><span class="line">       components:&#123;</span><br><span class="line">            </span><br><span class="line">           com1:&#123;</span><br><span class="line"><span class="handlebars"><span class="xml">               template:'<span class="tag">&lt;<span class="name">h1</span>&gt;</span>jjjj</span><span class="template-variable">&#123;&#123;pmsg&#125;&#125;</span><span class="xml">---</span><span class="template-variable">&#123;&#123;cmsg&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span>',</span></span></span><br><span class="line"><span class="actionscript">            <span class="comment">//    需要定义才能使用，只读</span></span></span><br><span class="line"><span class="actionscript">               props:[<span class="string">'pmsg'</span>],</span></span><br><span class="line">               data() &#123;</span><br><span class="line"><span class="actionscript">               <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">                   cmsg:<span class="string">"aaaaa"</span></span></span><br><span class="line">               &#125;</span><br><span class="line">           &#125;,</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>组件中props中定义的属性的数据都是父组件传递过来的，传递过来的数据是只读单向的，自己修改会报错，可以通过调用父组件传递过的函数修改</p>
 </blockquote>
-<h4 id="组件的组成——事件"><a href="#组件的组成——事件" class="headerlink" title="组件的组成——事件"></a>组件的组成——事件</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[事件]--&gt;A1[普通事件包括自定义事件]</span><br><span class="line">A1--&gt;A11[通过this.$emit触发]</span><br><span class="line">A--&gt;A2[修饰符事件]</span><br></pre></td></tr></table></figure>
+<h4 id="组件的组成——事件"><a href="#组件的组成——事件" class="headerlink" title="组件的组成——事件"></a>组件的组成——事件</h4><pre class="mermaid">graph LR
+A[事件]-->A1[普通事件包括自定义事件]
+A1-->A11[通过this.$emit触发]
+A-->A2[修饰符事件]</pre>
 
 <p>普通事件通过<code>@chang</code>、<code>@input</code>、<code>@click</code>、<code>@customEvnet</code>绑定事件，通过<code>this.$emit(&#39;EventName&#39;,param...)</code>触发，其中@input是<code>v-on:input</code>的缩写</p>
 <h4 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h4><blockquote>
@@ -320,6 +330,17 @@
 
 
 <h4 id="计算属性-computed"><a href="#计算属性-computed" class="headerlink" title="计算属性 computed"></a>计算属性 computed</h4><p>依赖于固定的数据类型——响应式数据，普通全局属性改变是computed是不会重新计算的</p>
+]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>vue/Vuex</title>
+    <url>/blog/2020/04/29/vue/Vuex/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><h4 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">"vue"</span>;</span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">"vuex"</span>;</span><br><span class="line"></span><br><span class="line">Vue.use(Vuex);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state: &#123;&#125;,</span><br><span class="line">   mutations: &#123;</span><br><span class="line">    listMemos(state, total) &#123;</span><br><span class="line">      state.memos.total = total;</span><br><span class="line">      <span class="built_in">console</span>.log(total);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  actions: &#123;&#125;,</span><br><span class="line">  modules: &#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><code>mutations</code>用于修改并跟踪数据的变化，通过<code>store.commit(&#39;mutations&#39;,params)</code>调用</p>
 ]]></content>
       <categories>
         <category>vue</category>
@@ -413,40 +434,9 @@
       </categories>
   </entry>
   <entry>
-    <title>vue/Vuex</title>
-    <url>/blog/2020/04/29/vue/Vuex/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><h4 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">"vue"</span>;</span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">"vuex"</span>;</span><br><span class="line"></span><br><span class="line">Vue.use(Vuex);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state: &#123;&#125;,</span><br><span class="line">   mutations: &#123;</span><br><span class="line">    listMemos(state, total) &#123;</span><br><span class="line">      state.memos.total = total;</span><br><span class="line">      <span class="built_in">console</span>.log(total);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  actions: &#123;&#125;,</span><br><span class="line">  modules: &#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><code>mutations</code>用于修改并跟踪数据的变化，通过<code>store.commit(&#39;mutations&#39;,params)</code>调用</p>
-]]></content>
-      <categories>
-        <category>vue</category>
-      </categories>
-  </entry>
-  <entry>
     <title>vue/Vue-router</title>
     <url>/blog/2020/04/29/vue/Vue-router/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script>]]></content>
-      <categories>
-        <category>vue</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>vue/PromiseAndAxiso</title>
-    <url>/blog/2020/04/29/vue/PromiseAndAxiso/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><h4 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">      <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">          setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">              <span class="keyword">var</span> flag = <span class="literal">false</span>;</span><br><span class="line">              <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">                  resolve(<span class="string">"hello"</span>);</span><br><span class="line">              &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                  reject(<span class="string">"出错了"</span>);</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;, <span class="number">1000</span>)</span><br><span class="line">      &#125;);</span><br><span class="line">      p.then(<span class="function">(<span class="params">resovle</span>) =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(resovle);</span><br><span class="line">      &#125;, (reject) =&gt; &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(reject);</span><br><span class="line">      &#125;)</span><br><span class="line">  &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>Promise</code>是一个异步任务结果的容器，<code>new Promise()</code>接收一个<code>function</code>作为回调函数，以执行异步任务。</li>
-<li><code>Promise</code>是异步任务的结果容器，异步任务的回调函数有两个<strong>函数形参</strong><code>resolve</code>和<code>reject</code>分别用于处理异步任务的成功或失败结果。</li>
-<li><code>Promise.then(function(){},function(){})</code>用于获取执行结果，其中第一个函数用于处理<code>resolve</code>状态的结果，第二个函数用户处理<code>rejected</code>状态的结果。</li>
-</ul>
-<h4 id="Axiso"><a href="#Axiso" class="headerlink" title="Axiso"></a>Axiso</h4><p>1.form格式，将Content-Type类型设置为application/x-www-form-urlencode，POST请求时将data序列化,提交的数据会按照 key1=val1&amp;key2=val2 的方式进行编码，key 和 val 都进行了 URL 转码</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">headers: &#123;</span><br><span class="line">     "Content-Type": "application/x-www-form-urlencoded; charset=utf-8;"</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<p>2.json格式，有时候后台需要body传送的是json数据，将Content-Type类型设置为application/json，注意POST请求时data不要序列化</p>
-<p><img src="https://pq3kbw.ch.files.1drv.com/y4pVImJLLHaQ8JD4o1jP7Yc6mxfU-vvKh8p2_2ACC4j8bDt6UApX3pffY0su3509SA_3wHbtnvpVLu3se3FBZ8OuWGexflBicIwms6SqNd0hyKXuAuyoMoVGU1yltaOY1TsBNRW0vkT4277bJ_NJvCXtgoZrrb4Krc5plsnAjKmykscEWxWNFPiSXP0aCPfsrrjQoNrLpy627h9ya3XIG_0rBTQrt7XLL08I4Lkny1wGlk" alt></p>
-]]></content>
       <categories>
         <category>vue</category>
       </categories>
@@ -496,6 +486,26 @@
 <p><img src="https://api.onedrive.com/v1.0/shares/s!AnfzhZ6EzsFXgUG9cmvHd-As7ne_/root/content" alt></p>
 <p>选择 NPM管理包</p>
 <h4 id="自定义webpack和babel配置"><a href="#自定义webpack和babel配置" class="headerlink" title="自定义webpack和babel配置"></a>自定义webpack和babel配置</h4><p><code>vue.config.js</code> 是一个可选的配置文件，如果项目的 (和 <code>package.json</code> 同级的) 根目录中存在这个文件，那么它会被 <code>@vue/cli-service</code> 自动加载。<a href="https://cli.vuejs.org/zh/config/#vue-config-js" target="_blank" rel="noopener">官方地址</a></p>
+]]></content>
+      <categories>
+        <category>vue</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>vue/PromiseAndAxiso</title>
+    <url>/blog/2020/04/29/vue/PromiseAndAxiso/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\blog\assets\js\Meting.min.js"></script><h4 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">      <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">          setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">              <span class="keyword">var</span> flag = <span class="literal">false</span>;</span><br><span class="line">              <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">                  resolve(<span class="string">"hello"</span>);</span><br><span class="line">              &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                  reject(<span class="string">"出错了"</span>);</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;, <span class="number">1000</span>)</span><br><span class="line">      &#125;);</span><br><span class="line">      p.then(<span class="function">(<span class="params">resovle</span>) =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(resovle);</span><br><span class="line">      &#125;, (reject) =&gt; &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(reject);</span><br><span class="line">      &#125;)</span><br><span class="line">  &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>Promise</code>是一个异步任务结果的容器，<code>new Promise()</code>接收一个<code>function</code>作为回调函数，以执行异步任务。</li>
+<li><code>Promise</code>是异步任务的结果容器，异步任务的回调函数有两个<strong>函数形参</strong><code>resolve</code>和<code>reject</code>分别用于处理异步任务的成功或失败结果。</li>
+<li><code>Promise.then(function(){},function(){})</code>用于获取执行结果，其中第一个函数用于处理<code>resolve</code>状态的结果，第二个函数用户处理<code>rejected</code>状态的结果。</li>
+</ul>
+<h4 id="Axiso"><a href="#Axiso" class="headerlink" title="Axiso"></a>Axiso</h4><p>1.form格式，将Content-Type类型设置为application/x-www-form-urlencode，POST请求时将data序列化,提交的数据会按照 key1=val1&amp;key2=val2 的方式进行编码，key 和 val 都进行了 URL 转码</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">headers: &#123;</span><br><span class="line">     "Content-Type": "application/x-www-form-urlencoded; charset=utf-8;"</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.json格式，有时候后台需要body传送的是json数据，将Content-Type类型设置为application/json，注意POST请求时data不要序列化</p>
+<p><img src="https://pq3kbw.ch.files.1drv.com/y4pVImJLLHaQ8JD4o1jP7Yc6mxfU-vvKh8p2_2ACC4j8bDt6UApX3pffY0su3509SA_3wHbtnvpVLu3se3FBZ8OuWGexflBicIwms6SqNd0hyKXuAuyoMoVGU1yltaOY1TsBNRW0vkT4277bJ_NJvCXtgoZrrb4Krc5plsnAjKmykscEWxWNFPiSXP0aCPfsrrjQoNrLpy627h9ya3XIG_0rBTQrt7XLL08I4Lkny1wGlk" alt></p>
 ]]></content>
       <categories>
         <category>vue</category>
@@ -667,7 +677,11 @@
 </blockquote>
 <ol start="5">
 <li><p>(1)Check if bean definition exists in this factory. (2) Guarantee initialization of beans that the current bean depends on.(3) Create bean instance.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph TB</span><br><span class="line">CREATE_BEAN_INSTANCE--&gt;Decision&#123;mbd.isSingleton&#125;</span><br><span class="line">Decision --&gt;|true| getSingleton</span><br><span class="line">Decision --&gt;|else if mbd.isPrototype| D[Result one]</span><br><span class="line">Decision--&gt;|else| E[Result two]</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">   graph TB
+CREATE_BEAN_INSTANCE-->Decision{mbd.isSingleton}
+Decision -->|true| getSingleton
+Decision -->|else if mbd.isPrototype| D[Result one]
+Decision-->|else| E[Result two]</pre>
 
 
 
@@ -697,7 +711,35 @@
 
 <p>这里说的初始化方法，指的是下面两种：<br>1）bean实现了InitializingBean接口，对应的方法为afterPropertiesSet</p>
 <p>2）在bean定义的时候，通过init-method设置的方法</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph TB</span><br><span class="line"></span><br><span class="line">A[A:AnnotationConfigApplicationContext]</span><br><span class="line">B((A.refresh))</span><br><span class="line">1.4[postProcessBeanFactory]</span><br><span class="line">1.5[invokeBeanFactoryPostProcessors]</span><br><span class="line">1.6[registerBeanPostProcessors]</span><br><span class="line">A --&gt; B</span><br><span class="line">subgraph 1</span><br><span class="line">	B --&gt; 1.4</span><br><span class="line">	1.4 --&gt; 1.5</span><br><span class="line">	1.5 --&gt; 1.6</span><br><span class="line">	subgraph 1.6</span><br><span class="line">		1.6 --&gt; 1.6.1</span><br><span class="line">	end</span><br><span class="line">end</span><br><span class="line">A.finishRefresh((finishRefresh))--&gt;beanFactory.preInstantiateSingletons</span><br><span class="line">beanFactory.preInstantiateSingletons --&gt;preInstantiateSingletons</span><br><span class="line">preInstantiateSingletons --&gt; |Loop|getBean</span><br><span class="line">subgraph Trigger initialization of all non-lazy singleton beans</span><br><span class="line">getBean --&gt; getSingleton</span><br><span class="line">getSingleton --&gt;singletonFactory.getObject</span><br><span class="line">singletonFactory.getObject--&gt;doGetBean</span><br><span class="line">doGetBean --&gt;createBean</span><br><span class="line">createBean --&gt;doCreateBean</span><br><span class="line">doCreateBean --&gt; initializeBean</span><br><span class="line">initializeBean--&gt;applyBeanPostProcessorsBeforeInitialization</span><br><span class="line">applyBeanPostProcessorsBeforeInitialization --&gt;processor.postProcessBeforeInitialization</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">graph TB
+
+A[A:AnnotationConfigApplicationContext]
+B((A.refresh))
+1.4[postProcessBeanFactory]
+1.5[invokeBeanFactoryPostProcessors]
+1.6[registerBeanPostProcessors]
+A --> B
+subgraph 1
+    B --> 1.4
+    1.4 --> 1.5
+    1.5 --> 1.6
+    subgraph 1.6
+        1.6 --> 1.6.1
+    end
+end
+A.finishRefresh((finishRefresh))-->beanFactory.preInstantiateSingletons
+beanFactory.preInstantiateSingletons -->preInstantiateSingletons
+preInstantiateSingletons --> |Loop|getBean
+subgraph Trigger initialization of all non-lazy singleton beans
+getBean --> getSingleton
+getSingleton -->singletonFactory.getObject
+singletonFactory.getObject-->doGetBean
+doGetBean -->createBean
+createBean -->doCreateBean
+doCreateBean --> initializeBean
+initializeBean-->applyBeanPostProcessorsBeforeInitialization
+applyBeanPostProcessorsBeforeInitialization -->processor.postProcessBeforeInitialization
+end</pre>
 
 <blockquote>
 <p>有趣的添加了@configuration的bean,是被spring的cllib增强的代理类。com.mxdc.Config$$EnhancerBySpringCGLIB$$aff7e6e7</p>

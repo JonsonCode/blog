@@ -59,6 +59,25 @@
     <link href="https://mxdc.github.io/blog/2020/04/29/vue/Vue%E6%A0%B8%E5%BF%83%E5%B1%9E%E6%80%A7/"/>
     <id>https://mxdc.github.io/blog/2020/04/29/vue/Vue%E6%A0%B8%E5%BF%83%E5%B1%9E%E6%80%A7/</id>
     <published>2020-04-28T18:27:14.837Z</published>
+    <updated>2020-05-01T03:35:25.390Z</updated>
+    
+    <summary type="html">
+    
+      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://mxdc.github.io/blog/categories/vue/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vue/Vuex</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/vue/Vuex/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/vue/Vuex/</id>
+    <published>2020-04-28T18:27:14.835Z</published>
     <updated>2020-04-30T10:28:25.244Z</updated>
     
     <summary type="html">
@@ -77,25 +96,6 @@
     <title>vue/Vue-ssr</title>
     <link href="https://mxdc.github.io/blog/2020/04/29/vue/Vue-ssr/"/>
     <id>https://mxdc.github.io/blog/2020/04/29/vue/Vue-ssr/</id>
-    <published>2020-04-28T18:27:14.835Z</published>
-    <updated>2020-04-30T10:28:25.244Z</updated>
-    
-    <summary type="html">
-    
-      &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\blog\assets\css\APlayer.min.css&quot;&gt;
-    
-    </summary>
-    
-    
-      <category term="vue" scheme="https://mxdc.github.io/blog/categories/vue/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>vue/Vuex</title>
-    <link href="https://mxdc.github.io/blog/2020/04/29/vue/Vuex/"/>
-    <id>https://mxdc.github.io/blog/2020/04/29/vue/Vuex/</id>
     <published>2020-04-28T18:27:14.835Z</published>
     <updated>2020-04-30T10:28:25.244Z</updated>
     
@@ -131,9 +131,9 @@
   </entry>
   
   <entry>
-    <title>vue/PromiseAndAxiso</title>
-    <link href="https://mxdc.github.io/blog/2020/04/29/vue/PromiseAndAxiso/"/>
-    <id>https://mxdc.github.io/blog/2020/04/29/vue/PromiseAndAxiso/</id>
+    <title>vue/Vue-cli</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/vue/Vue-cli/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/vue/Vue-cli/</id>
     <published>2020-04-28T18:27:14.833Z</published>
     <updated>2020-04-30T10:28:25.244Z</updated>
     
@@ -150,9 +150,9 @@
   </entry>
   
   <entry>
-    <title>vue/Vue-cli</title>
-    <link href="https://mxdc.github.io/blog/2020/04/29/vue/Vue-cli/"/>
-    <id>https://mxdc.github.io/blog/2020/04/29/vue/Vue-cli/</id>
+    <title>vue/PromiseAndAxiso</title>
+    <link href="https://mxdc.github.io/blog/2020/04/29/vue/PromiseAndAxiso/"/>
+    <id>https://mxdc.github.io/blog/2020/04/29/vue/PromiseAndAxiso/</id>
     <published>2020-04-28T18:27:14.833Z</published>
     <updated>2020-04-30T10:28:25.244Z</updated>
     

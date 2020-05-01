@@ -227,7 +227,7 @@ daovoice('update');
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          spring源码解析/IOC
+          spring源码解析/IOC<a href="https://github.com/MXDC/note/tree/master/spring%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/IOC.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil-alt"></i></a>
         </h1>
 
         <div class="post-meta">
@@ -262,7 +262,7 @@ daovoice('update');
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>6.6k</span>
+              <span>6.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -363,7 +363,11 @@ daovoice('update');
 </blockquote>
 <ol start="5">
 <li><p>(1)Check if bean definition exists in this factory. (2) Guarantee initialization of beans that the current bean depends on.(3) Create bean instance.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">CREATE_BEAN_INSTANCE--&gt;Decision&#123;mbd.isSingleton&#125;</span><br><span class="line">Decision --&gt;|true| getSingleton</span><br><span class="line">Decision --&gt;|else if mbd.isPrototype| D[Result one]</span><br><span class="line">Decision--&gt;|else| E[Result two]</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">   graph TB
+CREATE_BEAN_INSTANCE-->Decision{mbd.isSingleton}
+Decision -->|true| getSingleton
+Decision -->|else if mbd.isPrototype| D[Result one]
+Decision-->|else| E[Result two]</pre>
 
 
 
@@ -393,7 +397,35 @@ daovoice('update');
 
 <p>这里说的初始化方法，指的是下面两种：<br>1）bean实现了InitializingBean接口，对应的方法为afterPropertiesSet</p>
 <p>2）在bean定义的时候，通过init-method设置的方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line"></span><br><span class="line">A[A:AnnotationConfigApplicationContext]</span><br><span class="line">B((A.refresh))</span><br><span class="line">1.4[postProcessBeanFactory]</span><br><span class="line">1.5[invokeBeanFactoryPostProcessors]</span><br><span class="line">1.6[registerBeanPostProcessors]</span><br><span class="line">A --&gt; B</span><br><span class="line">subgraph 1</span><br><span class="line">	B --&gt; 1.4</span><br><span class="line">	1.4 --&gt; 1.5</span><br><span class="line">	1.5 --&gt; 1.6</span><br><span class="line">	subgraph 1.6</span><br><span class="line">		1.6 --&gt; 1.6.1</span><br><span class="line">	end</span><br><span class="line">end</span><br><span class="line">A.finishRefresh((finishRefresh))--&gt;beanFactory.preInstantiateSingletons</span><br><span class="line">beanFactory.preInstantiateSingletons --&gt;preInstantiateSingletons</span><br><span class="line">preInstantiateSingletons --&gt; |Loop|getBean</span><br><span class="line">subgraph Trigger initialization of all non-lazy singleton beans</span><br><span class="line">getBean --&gt; getSingleton</span><br><span class="line">getSingleton --&gt;singletonFactory.getObject</span><br><span class="line">singletonFactory.getObject--&gt;doGetBean</span><br><span class="line">doGetBean --&gt;createBean</span><br><span class="line">createBean --&gt;doCreateBean</span><br><span class="line">doCreateBean --&gt; initializeBean</span><br><span class="line">initializeBean--&gt;applyBeanPostProcessorsBeforeInitialization</span><br><span class="line">applyBeanPostProcessorsBeforeInitialization --&gt;processor.postProcessBeforeInitialization</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">graph TB
+
+A[A:AnnotationConfigApplicationContext]
+B((A.refresh))
+1.4[postProcessBeanFactory]
+1.5[invokeBeanFactoryPostProcessors]
+1.6[registerBeanPostProcessors]
+A --> B
+subgraph 1
+    B --> 1.4
+    1.4 --> 1.5
+    1.5 --> 1.6
+    subgraph 1.6
+        1.6 --> 1.6.1
+    end
+end
+A.finishRefresh((finishRefresh))-->beanFactory.preInstantiateSingletons
+beanFactory.preInstantiateSingletons -->preInstantiateSingletons
+preInstantiateSingletons --> |Loop|getBean
+subgraph Trigger initialization of all non-lazy singleton beans
+getBean --> getSingleton
+getSingleton -->singletonFactory.getObject
+singletonFactory.getObject-->doGetBean
+doGetBean -->createBean
+createBean -->doCreateBean
+doCreateBean --> initializeBean
+initializeBean-->applyBeanPostProcessorsBeforeInitialization
+applyBeanPostProcessorsBeforeInitialization -->processor.postProcessBeforeInitialization
+end</pre>
 
 <blockquote>
 <p>有趣的添加了@configuration的bean,是被spring的cllib增强的代理类。com.mxdc.Config$$EnhancerBySpringCGLIB$$aff7e6e7</p>
@@ -701,6 +733,19 @@ window.addEventListener('pjax:success', () => {
 
 
 
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
     <div id="pjax">
@@ -709,5 +754,12 @@ window.addEventListener('pjax:success', () => {
   
 
     </div>
+  <meting-js
+	server="netease"
+	type="playlist"
+  fixed="true"
+  lrcType="3"
+  id="504782371">
+</meting-js>
 <script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/blog/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>
