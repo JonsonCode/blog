@@ -296,7 +296,7 @@ related_posts:
 # Post edit
 # Dependencies: https://github.com/hexojs/hexo-deployer-git
 post_edit:
-  enable: false
+  enable: true
   url: https://github.com/MXDC/note/tree/master/ # Link for view source
   #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name # Link for fork & edit
 
@@ -810,9 +810,9 @@ pdf:
   # Default height
   height: 500px
 
-# Mermaid tag
+# Mermaid 
 mermaid:
-  enable: false
+  enable: true 
   # Available themes: default | dark | forest | neutral
   theme: forest
 

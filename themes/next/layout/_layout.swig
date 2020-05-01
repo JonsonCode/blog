@@ -56,5 +56,12 @@
   {%- if theme.pjax %}
     </div>
   {%- endif %}
+  <meting-js
+	server="netease"
+	type="playlist"
+  fixed="true"
+  lrcType="3"
+  id="504782371">
+</meting-js>
 </body>
 </html>
